@@ -8,7 +8,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  <!-- for theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/solar/bootstrap.min.css" integrity="sha384-NCwXci5f5ZqlDw+m7FwZSAwboa0svoPPylIW3Nf+GBDsyVum+yArYnaFLE9UDzLd" crossorigin="anonymous">
+  <!-- for the search -->
+  
   <title><?php echo SITENAME; ?></title>
 </head>
 
@@ -16,10 +19,9 @@
 
   <div class="container">
 
-  
 
 
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
       <span class="navbar-toggler-icon"></span>
@@ -27,25 +29,27 @@
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav me-auto">
       <li class="nav-item">
-      <a class="nav-link" href="/MVC/Home">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/MVC/User">User</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/MVC/Contact">Contact</a>
-    </li>
+      <!-- <a class="nav-link" href="/Blog/Home">Home</a> -->
+      <a class="nav-link" href="/Blog/Home">Publications</a> 
 
-      </ul>
+    </li>
+    <!-- <li class="nav-item">
+      <a class="nav-link" href="/Blog/Profile">Profile</a>
+    </li> -->
+    <!-- <li class="nav-item">
+      <a class="nav-link" href="/Blog/">Contact</a>
+    </li> -->
+
+    </ul>
     
     <ul class="nav navbar-nav navbar-right">
-    <?php
+   <?php
     if (isLoggedIn()) {
-      echo '<li class="nav-item"><a class="nav-link" href="/MVC/Login/logout"><i class="fa-solid fa-sign-out"></i> Logout  '. $_SESSION['user_username'].'</a></li>';
+      echo '<li class="nav-item"><a class="nav-link" href="/Blog/Login/logout"><i class="fa-solid fa-sign-out"></i> Logout  '. $_SESSION['user_username'].'</a></li>';
     } 
     else {
-      echo '<li class="nav-item"><a class="nav-link" href="/MVC/Login/Create"><i class="fa-solid fa-user-plus"></i> Sign Up</a></li>
-          <li class="nav-item"><a class="nav-link" href="/MVC/Login/"><i class="fa-solid fa-right-to-bracket"></i> Login</a></li>';
+      echo '<li class="nav-item"><a class="nav-link" href="/Blog/Login/create"><i class="fa-solid fa-user-plus"></i> Sign Up</a></li>
+          <li class="nav-item"><a class="nav-link" href="/Blog/Login/"><i class="fa-solid fa-right-to-bracket"></i> Login</a></li>';
     }
     ?>
   </ul>

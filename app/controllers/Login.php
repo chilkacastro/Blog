@@ -20,16 +20,16 @@ class Login extends Controller
             $user = $this->loginModel->getUser($_POST['username']);
             // Step 3: check now if the user is empty
             if ($user != null) {
-                $hashed_pass = $user->pass_hash;
+                $hashed_pass = $user->password_hash;
                 $password = $_POST['password'];
 
-                if (password_verify($password,$hashed_pass)){
-                    //echo '<meta http-equiv="Refresh" content="2; url=/MVC/">';
+                if (password_verify($password, $hashed_pass)){
+                    //echo '<meta http-equiv="Refresh" content="2; url=/Blog/">';
                     $this->createSession($user);
                     $data = [
                         'msg' => "Welcome, $user->username!",
                     ];
-                    $this->view('Home/home',$data);
+                    $this->view('Home/index',$data);
                 }
                 else{
                     $data = [
@@ -76,7 +76,7 @@ class Login extends Controller
                 if($this->validateData($data)){
                     if($this->loginModel->createUser($data)){
                         echo 'Please wait creating the account for '.trim($_POST['username']);
-                        echo '<meta http-equiv="Refresh" content="2; url=/MVC/Login/">';
+                        echo '<meta http-equiv="Refresh" content="2; url=/Blog/Profile/">';
                  }
                 } 
             }
@@ -124,6 +124,6 @@ class Login extends Controller
     public function logout(){
         unset($_SESSION['user_id']);
         session_destroy();
-        echo '<meta http-equiv="Refresh" content="1; url=/MVC/Login/">';
+        echo '<meta http-equiv="Refresh" content="1; url=/Blog/Login/">';
     }
 }

@@ -5,10 +5,10 @@
             $this->db = new Model;
         }
     
-        // get a publication
-        public function getPublication($publication_id){
-            $this->db->query("SELECT * FROM credentials WHERE username = :username");
-            $this->db->bind(':username',$publication_id);
+        // get a SINGLE publication
+        public function getPublication($publication_title){
+            $this->db->query("SELECT * FROM publication WHERE publication_title = :publication_title");
+            $this->db->bind(':publication_title', $publication_title);
             return $this->db->getSingle();
         }
 
@@ -27,8 +27,6 @@
 
         public function getAllPublicationsByText() {   // modify parameter later if needed
         }
-
-
 
         public function createPublication($data){
             $this->db->query("INSERT INTO credentials (username, pass_hash) values (:username, :pass_hash)");
