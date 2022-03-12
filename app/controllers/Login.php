@@ -117,7 +117,7 @@ class Login extends Controller
     }
 
     public function createSession($user){
-        $_SESSION['user_id'] = $user->id;
+        $_SESSION['user_id'] = $user->author_id;
         $_SESSION['user_username'] = $user->username;
     }
 
