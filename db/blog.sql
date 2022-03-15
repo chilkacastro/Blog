@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2022 at 07:22 PM
+-- Generation Time: Mar 16, 2022 at 12:56 AM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `blog_database`
+-- Database: `blog`
 --
 
 -- --------------------------------------------------------
@@ -29,9 +29,16 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `author` (
   `author_id` int(11) NOT NULL,
-  `username` int(11) NOT NULL,
-  `password_hash` int(11) NOT NULL
+  `username` varchar(255) NOT NULL,
+  `password_hash` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `author`
+--
+
+INSERT INTO `author` (`author_id`, `username`, `password_hash`) VALUES
+(2, 'phgthanh.ng', '$2y$10$WMdLmFm1x0YsX.vUixyYUeptW1QZ1PtuiRJz5FzpFy4QRvKqbhyQy');
 
 -- --------------------------------------------------------
 
@@ -115,7 +122,7 @@ ALTER TABLE `publication_comment`
 -- AUTO_INCREMENT for table `author`
 --
 ALTER TABLE `author`
-  MODIFY `author_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `author_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `profile`

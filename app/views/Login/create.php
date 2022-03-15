@@ -16,7 +16,7 @@
 
     <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" class="form-control <?php echo (!empty($data['password_len_error'])) ? 'is-invalid' : ''; ?>" id="password" name="password" placeholder="Password">
+      <input type="password" class="form-control  <?php echo (!empty($data['password_len_error'])) ? 'is-invalid' : ''; ?>" id="password" name="password" placeholder="Password">
       <span class="invalid-feedback"><?php echo $data['password_len_error']; ?> </span>
     </div>
     
@@ -27,11 +27,10 @@
     </div>
     
     <button type="submit" name="signup" class="btn btn-primary mt-2"> Sign up</button>
-    <p class="text-center">Already registered? <a href="/Blog/Login/">Login</a> </p>
+    <p class="text-center">Already registered?<a href="/Blog/Login/">Login</a> </p>
 
     <?php
 
-// this one is the second part of the else part in the create() function of the Login Controller
 if(!empty($data['msg'])){
     echo '<div class="alert alert-danger" role="alert">'.
         $data['msg'].'
@@ -39,7 +38,6 @@ if(!empty($data['msg'])){
 }
 
 ?>
-
   </form>
 
 <?php require APPROOT . '/views/includes/footer.php'; ?>
