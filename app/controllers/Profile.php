@@ -1,6 +1,6 @@
 <?php
 
-    class User extends Controller{
+    class Profile extends Controller{
         public function __construct(){
             $this->loginModel = $this->model('profileModel');
             if(!isLoggedIn()){
@@ -9,7 +9,7 @@
         }
 
         public function index(){
-            $this->view('User/index');
+            $this->view('Profile/index');
         }
 
         public function getUsers(){
@@ -71,36 +71,36 @@
             return $filename;
         }
 
-        public function details($user_id){
-            $user = $this->loginModel->getUser($user_id);
+        // public function details($user_id){
+        //     $user = $this->loginModel->getUser($user_id);
 
            
-                $this->view('User/details',$user);
+        //         $this->view('User/details',$user);
             
-        }
+        // }
 
-        public function update($user_id){
-            $user = $this->loginModel->getUser($user_id);
-            if(!isset($_POST['update'])){
-                $this->view('User/updateUser',$user);
-            }
-            else{
-                $filename= $this->imageUpload();
-                $data=[
-                    'name' => trim($_POST['name']),
-                    'city' => trim($_POST['city']),
-                    'phone' => trim($_POST['phone']),
-                    'picture' => $filename,
-                    'ID' => $user_id
-                ];
-                if($this->loginModel->updateUser($data)){
-                    echo 'Please wait we are upating the user for you!';
-                    //header('Location: /MVC/User/getUsers');
-                    echo '<meta http-equiv="Refresh" content="2; url=/MVC/User/getUsers">';
-                }
+        // public function update($user_id){
+        //     $user = $this->loginModel->getUser($user_id);
+        //     if(!isset($_POST['update'])){
+        //         $this->view('User/updateUser',$user);
+        //     }
+        //     else{
+        //         $filename= $this->imageUpload();
+        //         $data=[
+        //             'name' => trim($_POST['name']),
+        //             'city' => trim($_POST['city']),
+        //             'phone' => trim($_POST['phone']),
+        //             'picture' => $filename,
+        //             'ID' => $user_id
+        //         ];
+        //         if($this->loginModel->updateUser($data)){
+        //             echo 'Please wait we are upating the user for you!';
+        //             //header('Location: /MVC/User/getUsers');
+        //             echo '<meta http-equiv="Refresh" content="2; url=/MVC/User/getUsers">';
+        //         }
                 
-            }
-        }
+        //     }
+        // }
 
         public function delete($user_id){
             $data=[

@@ -29,13 +29,12 @@
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav me-auto">
       <li class="nav-item">
-      <!-- <a class="nav-link" href="/Blog/Home">Home</a> -->
       <a class="nav-link" href="/Blog/Home">Publications</a> 
 
     </li>
-    <!-- <li class="nav-item">
+    <li class="nav-item">
       <a class="nav-link" href="/Blog/Profile">Profile</a>
-    </li> -->
+    </li>
     <!-- <li class="nav-item">
       <a class="nav-link" href="/Blog/">Contact</a>
     </li> -->
