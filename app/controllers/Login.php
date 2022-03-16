@@ -63,15 +63,14 @@ class Login extends Controller
                     'email_error' => ''
                 ];
                 if ($this->validateData($data)) {
-                    if ($this->loginModel->createUser($data)) {
-                        $user = $this->loginModel->getUser($_POST['username']);
-
+                    if ($this->loginModel->createUser($data)) {  // put user in database
+                        $user = $this->loginModel->getUser($_POST['username']); //get the new created user from the database
+                        // validation of password
                         if ($user != null) {
                             $hashed_password = $user->password_hash;
                             $password = $_POST['password'];
                             if (password_verify($password, $hashed_password)) {
-                                //echo '<meta http-equiv="Refresh" content="2; url=/MVC/">';
-                                $this->createSession($user);
+                                $this->createSession($user);                        //needs to have a session to be able to go to the profile page
                                 $data = [
                                     'msg' => "Welcome, $user->username!",
                                 ];
