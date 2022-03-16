@@ -1,5 +1,4 @@
-<?php require APPROOT . '/views/includes/header.php'; 
-?>
+<?php require APPROOT . '/views/includes/header.php'; ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
  

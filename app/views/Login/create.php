@@ -33,7 +33,7 @@
                   <span class="invalid-feedback"><?php echo $data['password_match_error']; ?> </span>
                 </div>
                 <div class="d-flex justify-content-center">
-                  <button type="submit" name="signup" class="btn btn-primary mt-2">Register</button>
+                <a href="Blog/Login/create/"><button type="submit" name="signup" class="btn btn-primary mt-2">Register</button></a>
                 </div>
                 <p class="text-center text-muted mt-2 mb-0">Already registered?<a href="/Blog/Login/">Login</a> </p>
 

@@ -20,7 +20,7 @@
 
                             <div class='mt-2'>
                                 <button type="submit" name="login" class="btn btn-primary text-center">Login</button>
-                                <p class="text-center">Not registered yet? <a href="/Blog/Login/create">Sign Up</a> </p>
+                                <p class="text-center">Not registered yet? <a href="/Blog/Login/create/">Sign Up</a> </p>
                             </div>
 
                             <hr class="my-4">
