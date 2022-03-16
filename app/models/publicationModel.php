@@ -29,9 +29,14 @@
         }
 
         public function createPublication($data){
-            $this->db->query("INSERT INTO credentials (username, pass_hash) values (:username, :pass_hash)");
-            $this->db->bind(':username', $data['username']);
-            $this->db->bind(':pass_hash', $data['pass_hash']);
+            $this->db->query("INSERT INTO publication (profile_id, publication_title, publication_text, 
+            timestamp, publication_status) values (:profile_id, :publication_title, :publication_text, now(), :publication_status)");
+            $this->db->bind('profile_id', $data['profile_id']);
+            $this->db->bind(':publication_title', $data['publication_title']);
+            $this->db->bind(':publication_text', $data['publication_text']);
+            $this->db->bind(':timestamp', $data['publication_title']);
+            $this->db->bind(':publication_title', $data['publication_title']);
+            $this->db->bind(':publication_status', $data['publication_status']);
 
             if($this->db->execute()){
                 return true;
@@ -44,12 +49,14 @@
 
         // AUTHOR
         public function updatePublication($data) {
-            $this->db->query("UPDATE users SET Name=:name, City=:city, Phone=:phone, Picture=:picture WHERE ID=:user_id");
-            $this->db->bind(':name', $data['name']);
-            $this->db->bind(':city', $data['city']);
-            $this->db->bind(':phone', $data['phone']);
-            $this->db->bind(':picture',$data['picture']);
-            $this->db->bind('user_id',$data['ID']);
+            $this->db->query("UPDATE publication (profile_id, publication_title, publication_text, 
+            timestamp, publication_status) SET profile_id=:profile_id, publication_title=:publication_title,
+            publication_text=:publication_text, timestamp=:timestamp, publication_status=:publication_status");
+            $this->db->bind('profile_id', $data['profile_id']);
+            $this->db->bind(':publication_title', $data['publication_title']);
+            $this->db->bind(':publication_text', $data['publication_text']);
+            $this->db->bind(':timestamp',$data['timestamp']);
+            $this->db->bind(':publication_status',$data['publication_status']);
             if($this->db->execute()){
                 return true;
             }
@@ -60,8 +67,8 @@
         }
 
         public function deletePublication($data) {
-            $this->db->query("DELETE FROM users WHERE ID=:user_id");
-            $this->db->bind('user_id',$data['ID']);
+            $this->db->query("DELETE FROM publication WHERE publication_id=:publication_id");
+            $this->db->bind('publication_id',$data['publication_id']);
 
             if($this->db->execute()){
                 return true;
