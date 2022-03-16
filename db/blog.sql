@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2022 at 03:35 AM
+-- Generation Time: Mar 16, 2022 at 07:00 PM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `blog_database`
+-- Database: `blog`
 --
 
 -- --------------------------------------------------------
@@ -38,7 +38,7 @@ CREATE TABLE `author` (
 --
 
 INSERT INTO `author` (`author_id`, `username`, `password_hash`) VALUES
-(5, 'abcde', '$2y$10$vPztpZn1eyWcsjL.QLg9peDjeJV7urTkMHVUOnWCMLM.T.odEahiy');
+(6, 'phgthanhng', '$2y$10$ZnlZ6hO26GbC0ujkSi867eWqgx791W4UfImDk133p1OMhY6ZLCVGy');
 
 -- --------------------------------------------------------
 
@@ -54,6 +54,13 @@ CREATE TABLE `profile` (
   `last_name` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `profile`
+--
+
+INSERT INTO `profile` (`profile_id`, `author_id`, `first_name`, `middle_name`, `last_name`) VALUES
+(1, 6, 'Phuong Thanh', '', 'Nguyen');
+
 -- --------------------------------------------------------
 
 --
@@ -68,6 +75,14 @@ CREATE TABLE `publication` (
   `timestamp` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
   `publication_status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `publication`
+--
+
+INSERT INTO `publication` (`publication_id`, `profile_id`, `publication_title`, `publication_text`, `timestamp`, `publication_status`) VALUES
+(1, 1, 'a', 'ascx', '2022-03-16 06:35:18.000000', 'asx'),
+(2, 1, 'This is my first post', 'abc', '2022-03-16 17:08:25.000000', 'public');
 
 -- --------------------------------------------------------
 
@@ -123,19 +138,19 @@ ALTER TABLE `publication_comment`
 -- AUTO_INCREMENT for table `author`
 --
 ALTER TABLE `author`
-  MODIFY `author_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `author_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `profile`
 --
 ALTER TABLE `profile`
-  MODIFY `profile_id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `profile_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `publication`
 --
 ALTER TABLE `publication`
-  MODIFY `publication_id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `publication_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `publication_comment`
