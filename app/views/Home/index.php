@@ -35,11 +35,39 @@
         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div> -->
+
+    
+</nav>
+
+   
+    
+    <table  class="table table-bordered">
+        <tr>
+            <td>Title</td>
+            <td>Date</td>
+            <td>Author</td>
+        </tr>
+        <?php
+            foreach($data["publications"] as $publication){
+                echo"<td>
+                <a href='/Blog/Home/details/$publication->publication_title'>$publication->publication_title</a>
+                </td>";
+                echo"<td>$publication->timestamp</td>";
+                echo"<td>$publication->profile_id</td>";
+                echo"</tr>";
+
+            }
+        ?>
+    </table>
+
+
+   
+<?php require APPROOT . '/views/includes/footer.php'; ?>
 <?php
-if ($data != []) {
-    echo '<div class="alert alert-success" role="alert">' .
-        $data['msg'] . '
-          </div>';
+if(!empty($data['msg'])){
+    echo '<div class="alert alert-danger" role="alert">'.
+        $data['msg'].'
+    </div>';
 }
 ?>
 <?php require APPROOT . '/views/includes/footer.php'; ?>

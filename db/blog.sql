@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2022 at 12:56 AM
+-- Generation Time: Mar 16, 2022 at 03:35 AM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.1
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `blog`
+-- Database: `blog_database`
 --
 
 -- --------------------------------------------------------
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `author` (
   `author_id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
+  `username` varchar(30) NOT NULL,
   `password_hash` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -38,7 +38,7 @@ CREATE TABLE `author` (
 --
 
 INSERT INTO `author` (`author_id`, `username`, `password_hash`) VALUES
-(2, 'phgthanh.ng', '$2y$10$WMdLmFm1x0YsX.vUixyYUeptW1QZ1PtuiRJz5FzpFy4QRvKqbhyQy');
+(5, 'abcde', '$2y$10$vPztpZn1eyWcsjL.QLg9peDjeJV7urTkMHVUOnWCMLM.T.odEahiy');
 
 -- --------------------------------------------------------
 
@@ -79,6 +79,7 @@ CREATE TABLE `publication_comment` (
   `publication_comment_id` int(20) NOT NULL,
   `profile_id` int(20) NOT NULL,
   `publication_id` int(20) NOT NULL,
+  `publication_comment_text` varchar(500) NOT NULL,
   `timestamp` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -122,7 +123,7 @@ ALTER TABLE `publication_comment`
 -- AUTO_INCREMENT for table `author`
 --
 ALTER TABLE `author`
-  MODIFY `author_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `author_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `profile`

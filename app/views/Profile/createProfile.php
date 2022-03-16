@@ -5,41 +5,35 @@
  
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/Blog/Profile/getPublications">Get Users</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/Blog/Profile/createPublication">Create User</a>
-</li>
-     
-    </ul>
-   
+    
+  <h1>Create Profile View</h1>
   </div>
 </nav>
 
-    <h1>Create Users View</h1>
-    <p>This view is invoked by UserController and the createUser() is executed</p>
+    
     
     <form action='' method='post' enctype="multipart/form-data">
 
     <div class="form-group">
-        <label for="nameinput">Name</label>
-        <input name="name" type="text" class="form-control" id="nameinput" placeholder="Name">
+        <label for="fnameinput">First Name</label>
+        <input name="fname" type="text" class="form-control" id="fnameinput" placeholder="First Name">
     </div>
     <div class="form-group">
+        <label for="mnameinput">Middle Name</label>
+        <input name="mname" type="text" class="form-control" id="mnameinput" placeholder="Middle Name">
+    </div>
+    <div class="form-group">
+        <label for="fnameinput">Last Name</label>
+        <input name="lname" type="text" class="form-control" id="lnameinput" placeholder="Last Name">
+    </div>
+    <!-- <div class="form-group">
         <label for="cityinput">City</label>
         <input name="city" type="text" class="form-control" id="cityinput" placeholder="City">
-    </div>
-    <div class="form-group">
-        <label for="phoneinput">Phone</label>
-        <input name="phone" type="number" class="form-control" id="phoneinput" placeholder="Phone">
-    </div>
-
-    <div class="form-group">
+    </div> -->
+    <!-- <div class="form-group">
         <label for="profileinput">Profile picture</label>
         <input type='file' name='picture' class='form-control' />
-    </div>
+    </div> -->
 
     <button type="submit" name='register' class="btn btn-primary">Register</button>
     </form>

@@ -6,11 +6,15 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/MVC/User/getUsers">Get Users</a>
+    <li class="nav-item">
+        <a class="nav-link" href="/Blog/Profile/getPublications">Edit profile</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/MVC/User/createUser">Create User</a>
+        <a class="nav-link" href="/Blog/Profile/editPublication">Edit a publication</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/Blog/Profile/createPublication">Create a publication</a>
+      </li>
 </li>
      
     </ul>
@@ -18,23 +22,30 @@
   </div>
 </nav>
 
-    <h1>Update Users View</h1>
-    <p>This view is invoked by UserController and the updateUser() is executed</p>
+    <h1>New publication</h1>
     
     <form action='' method='post'>
 
     <div class="form-group">
-        <label for="nameinput">Name</label>
-        <input name="name" type="text" class="form-control" id="nameinput" placeholder="<?php echo $data->Name?>">
+        <label for="titleinput">Title</label>
+        <input name="title" type="text" class="form-control" id="titleinput" placeholder="Title">
     </div>
     <div class="form-group">
-        <label for="cityinput">City</label>
-        <input name="city" type="text" class="form-control" id="cityinput" placeholder="<?php echo $data->City?>">
+        <label for="textinput">Content</label>
+        <input name="text" type="text" class="form-control" id="textinput" placeholder="Content">
     </div>
     <div class="form-group">
-        <label for="phoneinput">Phone</label>
-        <input name="phone" type="number" class="form-control" id="phoneinput" placeholder="<?php echo $data->Phone?>">
+        <label for="status">Status:</label>
+        <br>
+       <input type="radio" value="public" id="public" name="status">
+       <label for="public">Public</label>
+
+        <input type="radio" id="private" value="private" name="status">
+        <label for="private">Private</label>
+
     </div>
+
+    <button type="submit" name="upload" class="btn-btn-primary">Upload</button>
 
     </form>
 

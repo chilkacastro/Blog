@@ -68,7 +68,9 @@ class Login extends Controller
                 if($this->validateData($data)){
                     if($this->loginModel->createUser($data)){
                         echo 'Please wait creating the account for '.trim($_POST['username']);
-                        echo '<meta http-equiv="Refresh" content="2; url=/Blog/Login/">';
+                        header('Location: /Blog/Profile/createProfile');
+
+                        // echo '<meta http-equiv="Refresh" content="0; url=/Blog/Profile/createProfile">';
                  }
                 } 
             }
