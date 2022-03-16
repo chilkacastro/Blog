@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2022 at 07:22 PM
+-- Generation Time: Mar 16, 2022 at 03:22 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -29,9 +29,16 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `author` (
   `author_id` int(11) NOT NULL,
-  `username` int(11) NOT NULL,
-  `password_hash` int(11) NOT NULL
+  `username` varchar(30) NOT NULL,
+  `password_hash` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `author`
+--
+
+INSERT INTO `author` (`author_id`, `username`, `password_hash`) VALUES
+(5, 'abcde', '$2y$10$vPztpZn1eyWcsjL.QLg9peDjeJV7urTkMHVUOnWCMLM.T.odEahiy');
 
 -- --------------------------------------------------------
 
@@ -72,6 +79,7 @@ CREATE TABLE `publication_comment` (
   `publication_comment_id` int(20) NOT NULL,
   `profile_id` int(20) NOT NULL,
   `publication_id` int(20) NOT NULL,
+  `publication_comment_text` varchar(500) NOT NULL,
   `timestamp` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -115,7 +123,7 @@ ALTER TABLE `publication_comment`
 -- AUTO_INCREMENT for table `author`
 --
 ALTER TABLE `author`
-  MODIFY `author_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `author_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `profile`

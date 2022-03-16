@@ -16,6 +16,7 @@
             
         }
 
+        // CHILKA: PUT IT IN NAV BAR OR HAVE IT ALSO I NPROFILE PAGW
         // In order to read interesting posts, as a reader or an author, 
         // I need to see a list of all publications, most recent first
         public function getAllPublications() {
