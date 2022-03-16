@@ -13,7 +13,7 @@
         }
 
         public function getAllPublications() {
-            $this->db->query("SELECT * FROM publication");
+            $this->db->query("SELECT * FROM publication ORDER BY timestamp DESC");
             return $this->db->getResultSet(); // controller would handle this data 
         }
 
