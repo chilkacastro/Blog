@@ -40,16 +40,14 @@
 
     
 </nav>
-
-   
-    
-    <table  class="table table-bordered">
+    <table class="table table-bordered">
         <tr>
             <td>Title</td>
             <td>Date</td>
             <td>Author</td>
         </tr>
         <?php
+        if (!empty($data["publications"])) {
             foreach($data["publications"] as $publication){
                 echo"<td>
                 <a href='/Blog/Home/details/$publication->publication_title'>$publication->publication_title</a>
@@ -59,6 +57,7 @@
                 echo"</tr>";
 
             }
+        }
         ?>
     </table>
 

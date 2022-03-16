@@ -11,13 +11,10 @@
   <!-- for theme -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/solar/bootstrap.min.css" integrity="sha384-NCwXci5f5ZqlDw+m7FwZSAwboa0svoPPylIW3Nf+GBDsyVum+yArYnaFLE9UDzLd" crossorigin="anonymous">
   <!-- for the search -->
-
   <title><?php echo SITENAME; ?></title>
 </head>
 
 <body>
-
-  
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
