@@ -35,7 +35,7 @@
         <input type='file' name='picture' class='form-control' />
     </div> -->
 
-    <button type="submit" name='register' class="btn btn-primary">Register</button>
+    <button type="submit" name='register' class="btn btn-primary">Save</button>
     </form>
 
    

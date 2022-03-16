@@ -1,10 +1,5 @@
 <?php require APPROOT . '/views/includes/header.php'; ?>
 
-
-
-
-
-<?php require APPROOT . '/views/includes/footer.php'; ?>
 <?php
 if(!empty($data['msg'])){
     echo '<div class="alert alert-danger" role="alert">'.
