@@ -8,25 +8,27 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2">
+
                 <form action="#" method="get" id="searchForm" class="input-group">
-                    
                     <div class="input-group-btn search-panel">
-                        <select name="search_param" id="search_param" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
+                        <select name="search_param" id="search_param" class="btn btn-dark dropdown-toggle form-select form-select-sm" aria-label=".form-select-sm example" data-toggle="dropdown">
                             <option value="all">All</option>
                             <option value="author">Author</option>
                             <option value="title">Title</option>
                             <option value="content">Content</option>
                         </select>
                     </div>
-
                     <input type="text" class="form-control" name="x" placeholder="Search term...">
+
                     <span class="input-group-btn">
-                         <button type="submit" class="btn btn-primary">Search</button>
+                        <button type="submit" class="btn btn-primary">Search</button>
                     </span>
-                </form><!-- end form -->     
-            </div><!-- end col-xs-8 -->       
-        </div><!-- end row -->  
-    </div><!-- end container -->    
+
+                </form><!-- end form -->
+
+            </div><!-- end col-xs-8 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
 </div><!-- end col-md-9 -->
 
 <!-- <div>
