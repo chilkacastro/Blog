@@ -1,6 +1,6 @@
 <?php
 
-    class User extends Controller{
+    class Profile extends Controller{
         public function __construct(){
             $this->loginModel = $this->model('profileModel');
             if(!isLoggedIn()){
