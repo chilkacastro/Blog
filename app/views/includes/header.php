@@ -31,10 +31,11 @@
                         echo '<div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="/Blog/Profile" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Profile
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><a class="dropdown-item" href="/Blog/Profile">View Profile</a></li>
                                 <li><a class="dropdown-item" href="/Blog/Profile/editProfile">Edit Profile</a></li>
                                 <li><a class="nav-link" href="/Blog/Profile/createPublication">Create a publication</a></li>
                                 <li><a class="nav-link" href="/Blog/Profile/editPublication">Edit a publication</a></li>
