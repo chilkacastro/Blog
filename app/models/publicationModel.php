@@ -6,11 +6,11 @@
         }
     
         // get a SINGLE publication
-        public function getPublication($publication_title){
-            $this->db->query("SELECT * FROM publication WHERE publication_title = :publication_title");
-            $this->db->bind(':publication_title', $publication_title);
-            return $this->db->getSingle();
-        }
+        // public function getPublication($publication_title){
+        //     $this->db->query("SELECT * FROM publication WHERE publication_title = :publication_title");
+        //     $this->db->bind(':publication_title', $publication_title);
+        //     return $this->db->getSingle();
+        // }
 
         public function getAllPublications() {
             $this->db->query("SELECT profile.first_name, profile.middle_name, profile.last_name, publication.publication_title, publication.publication_text, publication.timestamp FROM profile INNER JOIN publication ON publication.profile_id = profile.profile_id

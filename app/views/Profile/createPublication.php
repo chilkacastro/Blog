@@ -10,9 +10,6 @@
                 <a class="nav-link" href="/Blog/Profile/getPublications">Edit profile</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/Blog/Profile/editPublication">Edit a publication</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="/Blog/Profile/createPublication">Create a publication</a>
             </li>
             </li>

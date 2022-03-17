@@ -7,7 +7,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/Blog/Profile/editProfile">Edit profile</a>
+                <?php
+                if (!empty($data["publications"])) {
+                    foreach($data["publications"] as $publication){
+                    echo" <a class='nav-link' href='/Blog/Profile/editProfile/$publication->profile_id'>Edit profile</a>"; 
+                }
+                }?>
+
+                <!-- <a class="nav-link" href="/Blog/Profile/editProfile">Edit profile</a> -->
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/Blog/Profile/createPublication">Create a publication</a>

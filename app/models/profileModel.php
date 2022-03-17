@@ -19,6 +19,27 @@
                 return false;
             }
         }
+
+        public function getProfile($profile_id) {
+           $this->db->query("SELECT * FROM profile WHERE profile_id = :profile_id");
+           $this->db->bind(':profile_id', $profile_id);
+           return $this->db->getSingle();
+        }
+
+        public function editProfile($data) {
+            $this->db->query("UPDATE profile SET first_name=:first_name, last_name=:last_name, middle_name=:middle_name WHERE profile_id=:profile_id");
+            $this->db->bind(':first_name', $data['fname']);
+            $this->db->bind(':middle_name', $data['mname']);
+            $this->db->bind(':last_name', $data['lname']);
+            $this->db->bind(':profile_id', $data['profile_id']);
+            if($this->db->execute()){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
         public function createPublication($data){
             $username = $_SESSION['user_username'];
             $this->db->query("INSERT INTO publication (profile_id, publication_title, publication_text, 
@@ -37,27 +58,24 @@
 
         }
 
-        public function updatePublication($data) {
-            $username = $_SESSION['user_username'];
+        public function editPublication($data) {
             $this->db->query("UPDATE publication SET publication_title=:publication_title,
-            publication_text=:publication_text, timestamp=now(), publication_status=:publication_status  WHERE profile_id = 
-            (SELECT profile_id FROM profile WHERE author_id = (SELECT author_id FROM author 
-            WHERE username = $username))");
-            $this->db->bind(':publication_title', $data['publication_title']);
-            $this->db->bind(':publication_text', $data['publication_text']);
-            $this->db->bind(':publication_status',$data['publication_status']);
+            publication_text=:publication_text, publication_status=:publication_status  WHERE publication_id=:publication_id");
+            $this->db->bind(':publication_title', $data['title']);
+            $this->db->bind(':publication_text', $data['text']);
+            $this->db->bind(':publication_status',$data['status']);
+            $this->db->bind(':publication_id',$data['publication_id']);
             if($this->db->execute()){
                 return true;
             }
             else{
                 return false;
             }
-
         }
 
         public function delete($data) {
             $this->db->query("DELETE FROM publication WHERE publication_id=:publication_id");
-            $this->db->bind('publication_id',$data['ID']);
+            $this->db->bind('publication_id',$data['publication_id']);
 
             if($this->db->execute()){
                 return true;
@@ -70,7 +88,7 @@
         //As an author, I can see all of my posts on my profile page
         public function getAuthorPublications() {
             $username = $_SESSION['user_username'];
-            $this->db->query("SELECT author_id, profile.first_name, publication.publication_id, publication.publication_status, profile.middle_name, profile.last_name, publication.publication_title, publication.publication_text, publication.timestamp FROM profile INNER JOIN publication ON publication.profile_id = profile.profile_id
+            $this->db->query("SELECT author_id, profile.profile_id, profile.first_name, publication.publication_id, publication.publication_status, profile.middle_name, profile.last_name, publication.publication_title, publication.publication_text, publication.timestamp FROM profile INNER JOIN publication ON publication.profile_id = profile.profile_id
             WHERE author_id = (SELECT author_id FROM author WHERE username = '$username')");
             return $this->db->getResultSet();
         }
