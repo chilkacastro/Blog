@@ -63,7 +63,7 @@ class Profile extends Controller{
 
     public function delete($publication_id) {
         $data=[
-            // 'publication_id' = $publication_id
+            'ID' => $publication_id
         ];
         if($this->profileModel->delete($data)) {
             echo 'Please wait we are deleting the user for you!';

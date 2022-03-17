@@ -55,9 +55,9 @@
 
         }
 
-        public function deletePublication($data) {
+        public function delete($data) {
             $this->db->query("DELETE FROM publication WHERE publication_id=:publication_id");
-            $this->db->bind('publication_id',$data['publication_id']);
+            $this->db->bind('publication_id',$data['ID']);
 
             if($this->db->execute()){
                 return true;
