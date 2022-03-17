@@ -9,12 +9,13 @@
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2">
 
-                <form action="#" method="get" id="searchForm" class="input-group">
+            <!-- Jiahui: I change the method="get" to "post" -->
+                <form action="#" method="post" id="searchForm" class="input-group">
                     <div class="input-group-btn search-panel">
                         <select name="search_param" id="search_param"
                             class="btn btn-dark dropdown-toggle form-select form-select-sm"
                             aria-label=".form-select-sm example" data-toggle="dropdown">
-                            <option value="all">All</option>
+                            <option value="all"><a href="/Blog/Home/searchByAuthor/">All</a></option>
                             <option value="author">Author</option>
                             <option value="title">Title</option>
                             <option value="content">Content</option>
