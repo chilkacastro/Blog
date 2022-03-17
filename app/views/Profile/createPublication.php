@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php require APPROOT . '/views/includes/header.php'; 
 ?>
 
@@ -18,6 +19,9 @@
 
     </div>
 </nav>
+=======
+<?php require APPROOT . '/views/includes/header.php';?>
+>>>>>>> 84769336d7b1723763354e75a8d953e556aaf59d
 
 <h1>New publication</h1>
 

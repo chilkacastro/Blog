@@ -18,4 +18,17 @@ class Home extends Controller
 
     }
 
+
+
+    // haven't done
+    public function searchByAuthor(){
+        $publications = $this->publicationModel->getAllPublicationsByAuthor();
+        $data = [
+            "publications" => $publications
+        ];
+     
+        $this->view('Home/index', $data);
+
+    }
+
 }

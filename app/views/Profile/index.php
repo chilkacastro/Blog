@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php require APPROOT . '/views/includes/header.php'; 
 ?>
 
@@ -28,6 +29,13 @@
 
 <h1>Profile </h1>
 <table class="table table-bordered">
+=======
+<?php require APPROOT . '/views/includes/header.php'; ?>
+<h1 class= "text-center mt-3">Profile</h1>
+<p class= "text-center mt-3">Nothing here yet to show information of Author</p>
+<h1 class= "text-center mt-3">Publications</h1>
+<table class="container table table-bordered">
+>>>>>>> 84769336d7b1723763354e75a8d953e556aaf59d
     <tr>
         <td>Title</td>
         <td>Date</td>
@@ -58,7 +66,8 @@
         }
         ?>
 </table>
-<h1>Comments</h1>
+
+<h1 class= "text-center mt-3">Comments</h1>
 
 <?php
 if(!empty($data['msg'])){
