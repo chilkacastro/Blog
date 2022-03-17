@@ -37,6 +37,7 @@
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                                 <li><a class="dropdown-item" href="/Blog/Profile/editProfile">Edit Profile</a></li>
                                 <li><a class="nav-link" href="/Blog/Profile/createPublication">Create a publication</a></li>
+                                <li><a class="nav-link" href="/Blog/Profile/editPublication">Edit a publication</a></li>
                             </ul>
                             </li>
                         </ul>
