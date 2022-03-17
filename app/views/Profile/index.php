@@ -3,7 +3,6 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
@@ -19,8 +18,8 @@
     </div>
 </nav>
 
-<h1>Profile </h1>
-<table class="table table-bordered">
+<h1 class= "text-center mt-3">Publications</h1>
+<table class="container table table-bordered">
     <tr>
         <td>Title</td>
         <td>Date</td>
@@ -51,7 +50,8 @@
         }
         ?>
 </table>
-<h1>Comments</h1>
+
+<h1 class= "text-center mt-3">Comments</h1>
 
 <?php
 if(!empty($data['msg'])){

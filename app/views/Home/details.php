@@ -13,7 +13,6 @@
         }
 ?>
 
-
 <?php
 if(!empty($data['msg'])){
     echo '<div class="alert alert-danger" role="alert">'.

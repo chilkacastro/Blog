@@ -5,27 +5,26 @@
         <div class="row d-flex justify-content-center align-items-center h-10">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                 <div class="card shadow-2-strong" style="border-radius: 1rem;">
-                    <div class="card-body p-5 text-center">
+                    <div class="card-body p-5">
 
                         <form class="px-4 py-3" method="post" action="">
-                            <h3 class="mb-5">Sign in</h3>
+                            <h3 class="mb-3 d-flex justify-content-center">SIGN IN</h3>
 
                             <div class="form-outline mb-4">
-                                <input type="text" class="form-control form-control-lg" id="usernamex-2" name="username"
-                                    placeholder="Username">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control form-control-md" id="usernamex-2" name="username" placeholder="Username">
                             </div>
 
                             <div class="form-outline mb-4">
-                                <input type="password" class="form-control form-control-lg" id="passwordX-2"
-                                    name="password" placeholder="Password">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control form-control-md" id="passwordX-2" name="password" placeholder="Password">
                             </div>
 
-                            <div class='mt-2'>
+                            <div class="mt-2 d-flex justify-content-center">
                                 <button type="submit" name="login" class="btn btn-primary text-center">Login</button>
-                                <p class="text-center">Not registered yet? <a href="/Blog/Login/create/">Sign Up</a>
-                                </p>
+                              
                             </div>
-
+                              <p class="text-center mt-3">Not registered yet? <a href="/Blog/Login/create/">Sign Up</a></p>
                             <hr class="my-4">
 
                             <?php
