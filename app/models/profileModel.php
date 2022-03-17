@@ -70,7 +70,7 @@
         //As an author, I can see all of my posts on my profile page
         public function getAuthorPublications() {
             $username = $_SESSION['user_username'];
-            $this->db->query("SELECT author_id, profile.first_name, profile.middle_name, profile.last_name, publication.publication_title, publication.publication_text, publication.timestamp FROM profile INNER JOIN publication ON publication.profile_id = profile.profile_id
+            $this->db->query("SELECT author_id, profile.first_name, publication.publication_status, profile.middle_name, profile.last_name, publication.publication_title, publication.publication_text, publication.timestamp FROM profile INNER JOIN publication ON publication.profile_id = profile.profile_id
             WHERE author_id = (SELECT author_id FROM author WHERE username = '$username')");
             return $this->db->getResultSet();
         }

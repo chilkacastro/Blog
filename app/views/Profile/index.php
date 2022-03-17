@@ -28,6 +28,7 @@
             <td>Title</td>
             <td>Date</td>
             <td>Author</td>
+            <td>Status</td>
         </tr>
         <?php
         if (!empty($data["publications"])) {
@@ -37,6 +38,8 @@
                 </td>";
                 echo"<td>$publication->timestamp</td>";
                 echo"<td>$publication->first_name $publication->middle_name $publication->last_name</td>";
+                echo"<td>$publication->publication_status</td>";
+                
                 echo"</tr>";
             }
         }
