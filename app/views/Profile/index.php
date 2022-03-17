@@ -1,18 +1,6 @@
 <?php require APPROOT . '/views/includes/header.php'; ?>
-<!-- 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/Blog/Profile/editProfile">Edit profile</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Blog/Profile/createPublication">Create a publication</a>
-            </li>
-        </ul>
-
-    </div>
- -->
-
+<h1 class= "text-center mt-3">Profile</h1>
+<p class= "text-center mt-3">Nothing here yet to show information of Author</p>
 <h1 class= "text-center mt-3">Publications</h1>
 <table class="container table table-bordered">
     <tr>
