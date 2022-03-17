@@ -1,6 +1,6 @@
 <?php require APPROOT . '/views/includes/header.php'; ?>
 
-<h1><?php $data->publication_?></h1>
+<h1><?php $data->publication_id?></h1>
 <p><?php $data->publication_text?></p>
 
 
