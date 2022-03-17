@@ -44,14 +44,12 @@
     }
     ?>
 </table>
-
-
-
+<!-- Chilka: I dont think this one is needed
 <?php
 if (!empty($data['msg'])) {
     echo '<div class="alert alert-danger" role="alert">' .
         $data['msg'] . '
     </div>';
 }
-?>
+?> -->
 <?php require APPROOT . '/views/includes/footer.php'; ?>
