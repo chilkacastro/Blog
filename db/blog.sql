@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2022 at 07:00 PM
+-- Generation Time: Mar 17, 2022 at 03:23 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -38,7 +38,13 @@ CREATE TABLE `author` (
 --
 
 INSERT INTO `author` (`author_id`, `username`, `password_hash`) VALUES
-(6, 'phgthanhng', '$2y$10$ZnlZ6hO26GbC0ujkSi867eWqgx791W4UfImDk133p1OMhY6ZLCVGy');
+(6, 'phgthanhng', '$2y$10$ZnlZ6hO26GbC0ujkSi867eWqgx791W4UfImDk133p1OMhY6ZLCVGy'),
+(7, 'abc', '$2y$10$TZG0.TfFJC4DKUrlgS/Kd.0AmzyNH503rJyY8SE2nvD/HI22b91e.'),
+(9, 'a', '$2y$10$BAo4wwgEffSGN1mQ8cnVPONoIj0YhDTCXmiKhM9ZYTWTklynXe/9q'),
+(10, '1934520@edu.vaniercollege.qc.c', '$2y$10$23SJ1U5uqvlbYZdNpgipneRnhVDY3dsITUJgjLvWSTUDuzOEl2YrC'),
+(11, 'b', '$2y$10$lLGTZMQWw43uiWxQRRMA8uZBblr6D0L3K8CZ8SalqfIdw3KeswNqS'),
+(12, 'abcd', '$2y$10$E.p7hByILKKAFeaado6kTeMFEiCv4KXg/3WtzmdQHa.YDQXv7TlRO'),
+(13, 'qwe', '$2y$10$XGafspPdjXvrJj1VcTS1bu7CNiP/ww/plc7DYVLl221KvPPj4lsem');
 
 -- --------------------------------------------------------
 
@@ -59,7 +65,10 @@ CREATE TABLE `profile` (
 --
 
 INSERT INTO `profile` (`profile_id`, `author_id`, `first_name`, `middle_name`, `last_name`) VALUES
-(1, 6, 'Phuong Thanh', '', 'Nguyen');
+(1, 6, 'Phuong Thanh', '', 'Nguyen'),
+(2, 7, 'Phuong Thanh', '', 'Nguyen'),
+(3, 12, 'Phuong Thanh', '', 'Nguyen'),
+(4, 13, 'Phuong Thanh', '', 'Nguyen');
 
 -- --------------------------------------------------------
 
@@ -81,8 +90,8 @@ CREATE TABLE `publication` (
 --
 
 INSERT INTO `publication` (`publication_id`, `profile_id`, `publication_title`, `publication_text`, `timestamp`, `publication_status`) VALUES
-(1, 1, 'a', 'ascx', '2022-03-16 06:35:18.000000', 'asx'),
-(2, 1, 'This is my first post', 'abc', '2022-03-16 17:08:25.000000', 'public');
+(5, 3, 'This is my first post', 'abc', '2022-03-16 23:11:35.000000', 'private'),
+(6, 1, 'This is another post', 'abc', '2022-03-16 23:12:03.000000', 'public');
 
 -- --------------------------------------------------------
 
@@ -138,19 +147,19 @@ ALTER TABLE `publication_comment`
 -- AUTO_INCREMENT for table `author`
 --
 ALTER TABLE `author`
-  MODIFY `author_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `author_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `profile`
 --
 ALTER TABLE `profile`
-  MODIFY `profile_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `profile_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `publication`
 --
 ALTER TABLE `publication`
-  MODIFY `publication_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `publication_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `publication_comment`
