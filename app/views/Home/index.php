@@ -31,12 +31,7 @@
     </div><!-- end container -->
 </div><!-- end col-md-9 -->
 
-<!-- <div>
-    <form class="d-flex">
-        <input class="form-control me-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div> -->
+
 
     
 </nav>
@@ -53,9 +48,8 @@
                 <a href='/Blog/Home/details/$publication->publication_title'>$publication->publication_title</a>
                 </td>";
                 echo"<td>$publication->timestamp</td>";
-                echo"<td>$publication->profile_id</td>";
+                echo"<td>$publication->first_name $publication->middle_name $publication->last_name</td>";
                 echo"</tr>";
-
             }
         }
         ?>
@@ -63,7 +57,6 @@
 
 
    
-<?php require APPROOT . '/views/includes/footer.php'; ?>
 <?php
 if(!empty($data['msg'])){
     echo '<div class="alert alert-danger" role="alert">'.

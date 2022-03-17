@@ -9,16 +9,14 @@ class Profile extends Controller{
     }
 
     public function index(){
-        $this->view('Profile/index');
+        $publications = $this->profileModel->getAuthorPublications();
+        $data = [
+            "publications" => $publications
+        ];
+     
+        $this->view('Profile/index', $data);
     }
 
-    // public function getUsers(){
-    //     $users = $this->loginModel->getUsers();
-    //     $data = [
-    //         "users" => $users
-    //     ];
-    //     $this->view('User/getUsers',$data);
-    // }
 
     public function createProfile() {
         if(!isset($_POST['register'])){
