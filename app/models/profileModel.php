@@ -20,9 +20,9 @@
             }
         }
 
-        public function getProfile($profile_id) {
-           $this->db->query("SELECT * FROM profile WHERE profile_id = :profile_id");
-           $this->db->bind(':profile_id', $profile_id);
+        public function getProfile($author_id) {
+           $this->db->query("SELECT * FROM profile WHERE author_id = :author_id");
+           $this->db->bind(':author_id', $author_id);
            return $this->db->getSingle();
         }
 

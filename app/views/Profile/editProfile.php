@@ -4,7 +4,7 @@
 
     <div class="form-group">
         <label for="fnameinput">First Name</label>
-        <input name="fname" type="text" class="form-control" id="fnameinput" value="<?php echo $data->first_name?>">
+        <input name="fname" type="text" class="form-control" id="fnameinput" value= "<?php echo $data->first_name?>">
     </div>
     <div class="form-group">
         <label for="mnameinput">Middle Name</label>

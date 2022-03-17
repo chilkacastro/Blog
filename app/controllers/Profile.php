@@ -91,8 +91,8 @@ class Profile extends Controller{
 
     }
 
-    public function editProfile($profile_id) {
-        $profile = $this->profileModel->getProfile($profile_id);
+    public function editProfile($author_id) {
+        $profile = $this->profileModel->getProfile($author_id);
 
         if(!isset($_POST['editProfile'])){
             $this->view('Profile/editProfile', $profile);
@@ -102,7 +102,7 @@ class Profile extends Controller{
                 "fname" => trim($_POST['fname']),
                 "mname" => trim($_POST['mname']),
                 "lname" => trim($_POST['lname']),
-                "profile_id" => $profile_id
+                "profile_id" => $profile -> profile_id
             ];
             if($this->profileModel->editProfile($data)) {
                 echo "Please wait we are updating your profile";
