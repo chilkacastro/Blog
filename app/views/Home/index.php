@@ -5,39 +5,10 @@
 <!-- search  -->
 <div class="col-md-9 col-md-push-1 container">
     <h3 class="text-center mt-3">Publications</h3>
-<<<<<<< Updated upstream
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-8 col-xs-offset-2">
-
-            <!-- Jiahui: I change the method="get" to "post" -->
-                <form action="#" method="post" id="searchForm" class="input-group">
-                    <div class="input-group-btn search-panel">
-                        <select name="search_param" id="search_param"
-                            class="btn btn-dark dropdown-toggle form-select form-select-sm"
-                            aria-label=".form-select-sm example" data-toggle="dropdown">
-                            <option value="all"><a href="/Blog/Home/searchByAuthor/">All</a></option>
-                            <option value="author">Author</option>
-                            <option value="title">Title</option>
-                            <option value="content">Content</option>
-                        </select>
-                    </div>
-                    <input type="text" class="form-control" name="x" placeholder="Search term...">
-
-                    <span class="input-group-btn">
-                        <button type="submit" class="btn btn-primary">Search</button>
-                    </span>
-
-                </form><!-- end form -->
-
-            </div><!-- end col-xs-8 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-=======
     <form action="#" method="get" id="searchForm" class="input-group container d-flex justify-content-center">
         <div class="input-group-btn search-panel">
             <select name="search_param" id="search_param" class="btn btn-dark dropdown-toggle form-select form-select-sm" aria-label=".form-select-sm example" data-toggle="dropdown">
-                <option value="all">All</option>
+                <option value="all"><a href="/Blog/Home/searchByAuthor/">All</a></option>
                 <option value="author">Author</option>
                 <option value="title">Title</option>
                 <option value="content">Content</option>
@@ -51,7 +22,6 @@
         </span>
 
     </form><!-- end form -->
->>>>>>> Stashed changes
 </div><!-- end col-md-9 -->
 
 </nav>
