@@ -17,7 +17,8 @@ class Login extends Controller
                 $hashed_password = $user->password_hash;
                 $password = $_POST['password'];
                 if (password_verify($password, $hashed_password)) {
-                    //echo '<meta http-equiv="Refresh" content="2; url=/MVC/">';
+                    //echo '<meta http-equiv="Refresh" content="2; url=/Blog/Profile">';
+                    header('Location: /Blog/Profile/');  // so it lands on correct page
                     $this->createSession($user);
                     $data = [
                         'msg' => "Welcome, $user->username!",

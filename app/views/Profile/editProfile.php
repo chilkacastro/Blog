@@ -1,16 +1,5 @@
 <?php require APPROOT . '/views/includes/header.php'; ?>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-        <h1>Edit Profile</h1>
-    </div>
-</nav>
-
-
-
 <form action='' method='post' enctype="multipart/form-data">
 
     <div class="form-group">
@@ -36,6 +25,5 @@
 
     <button type="submit" name='editProfile' class="btn btn-primary">Save</button>
 </form>
-
 
 <?php require APPROOT . '/views/includes/footer.php'; ?>

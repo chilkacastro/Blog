@@ -38,7 +38,6 @@
                                 <li><a class="dropdown-item" href="/Blog/Profile">View Profile</a></li>
                                 <li><a class="dropdown-item" href="/Blog/Profile/editProfile">Edit Profile</a></li>
                                 <li><a class="nav-link" href="/Blog/Profile/createPublication">Create a publication</a></li>
-                                <li><a class="nav-link" href="/Blog/Profile/editPublication">Edit a publication</a></li>
                             </ul>
                             </li>
                         </ul>

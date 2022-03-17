@@ -1,5 +1,4 @@
 <?php
-
 class Profile extends Controller{
     public function __construct(){
         $this->profileModel = $this->model('profileModel');
