@@ -70,19 +70,17 @@
         //As an author, I can see all of my posts on my profile page
         public function getAuthorPublications() {
             $username = $_SESSION['user_username'];
-            $this->db->query("SELECT author_id, profile.first_name, publication.publication_status, profile.middle_name, profile.last_name, publication.publication_title, publication.publication_text, publication.timestamp FROM profile INNER JOIN publication ON publication.profile_id = profile.profile_id
+            $this->db->query("SELECT author_id, profile.first_name, publication.publication_id, publication.publication_status, profile.middle_name, profile.last_name, publication.publication_title, publication.publication_text, publication.timestamp FROM profile INNER JOIN publication ON publication.profile_id = profile.profile_id
             WHERE author_id = (SELECT author_id FROM author WHERE username = '$username')");
             return $this->db->getResultSet();
         }
 
-
-        // CHILKA: PUT IT IN NAV BAR OR HAVE IT ALSO I NPROFILE PAGW
-        // In order to read interesting posts, as a reader or an author, 
-        // I need to see a list of all publications, most recent first
-        // Thanh: i dont think it's needed
-        // public function getAllPublications() {
-
-        // }
+        // to get one specific publication from Profile view of an author
+        public function getAuthorPublication($publication_id) {
+            $this->db->query("SELECT * FROM publication WHERE publication_id = :publication_id");
+            $this->db->bind(':publication_id', $publication_id);
+            return $this->db->getSingle();
+        }
 
         public function searchByAuthor() {
 

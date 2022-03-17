@@ -14,7 +14,6 @@ class Home extends Controller
             "publications" => $publications
         ];
      
-        // $this->view('Home/index', $data);
         $this->view('Home/index', $data);
 
     }
