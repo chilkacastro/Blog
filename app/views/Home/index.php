@@ -4,7 +4,7 @@
 
 <!-- search  -->
 <div class="col-md-9 col-md-push-1">
-    <h3 class="text-center">Search</h3>
+    <h3 class="text-center mt-3">Publications</h3>
     <div class="container">
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2">
@@ -33,9 +33,6 @@
         </div><!-- end row -->
     </div><!-- end container -->
 </div><!-- end col-md-9 -->
-
-
-
 
 </nav>
 <table class="table table-bordered">

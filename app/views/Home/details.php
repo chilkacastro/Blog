@@ -5,13 +5,13 @@
 <?php
         if (!empty($data["publications"])) {
             foreach($data["publications"] as $publication){
-                echo"<h1>
+                echo "<h1>
                 <a href='/Blog/Home/details/$publication->publication_title'>$publication->publication_title</a>
                 </h1>";
-                echo"<p>$publication->publication_text</p>";
+                echo "<p>$publication->publication_text</p>";
             }
         }
-        ?>
+?>
 
 
 <?php
