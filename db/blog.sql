@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2022 at 03:23 AM
+-- Generation Time: Mar 17, 2022 at 03:56 AM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.1
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,7 +44,8 @@ INSERT INTO `author` (`author_id`, `username`, `password_hash`) VALUES
 (10, '1934520@edu.vaniercollege.qc.c', '$2y$10$23SJ1U5uqvlbYZdNpgipneRnhVDY3dsITUJgjLvWSTUDuzOEl2YrC'),
 (11, 'b', '$2y$10$lLGTZMQWw43uiWxQRRMA8uZBblr6D0L3K8CZ8SalqfIdw3KeswNqS'),
 (12, 'abcd', '$2y$10$E.p7hByILKKAFeaado6kTeMFEiCv4KXg/3WtzmdQHa.YDQXv7TlRO'),
-(13, 'qwe', '$2y$10$XGafspPdjXvrJj1VcTS1bu7CNiP/ww/plc7DYVLl221KvPPj4lsem');
+(13, 'qwe', '$2y$10$XGafspPdjXvrJj1VcTS1bu7CNiP/ww/plc7DYVLl221KvPPj4lsem'),
+(14, 'test', '$2y$10$TBAucffpjHUej1sDRZW6zeLw7.eKyD/DQBHdr7eSj4aV8fqCWnP.6');
 
 -- --------------------------------------------------------
 
@@ -68,7 +69,8 @@ INSERT INTO `profile` (`profile_id`, `author_id`, `first_name`, `middle_name`, `
 (1, 6, 'Phuong Thanh', '', 'Nguyen'),
 (2, 7, 'Phuong Thanh', '', 'Nguyen'),
 (3, 12, 'Phuong Thanh', '', 'Nguyen'),
-(4, 13, 'Phuong Thanh', '', 'Nguyen');
+(4, 13, 'Phuong Thanh', '', 'Nguyen'),
+(5, 14, 'Test', 'test', 'TEST');
 
 -- --------------------------------------------------------
 
@@ -91,7 +93,8 @@ CREATE TABLE `publication` (
 
 INSERT INTO `publication` (`publication_id`, `profile_id`, `publication_title`, `publication_text`, `timestamp`, `publication_status`) VALUES
 (5, 3, 'This is my first post', 'abc', '2022-03-16 23:11:35.000000', 'private'),
-(6, 1, 'This is another post', 'abc', '2022-03-16 23:12:03.000000', 'public');
+(6, 1, 'This is another post', 'abc', '2022-03-16 23:12:03.000000', 'public'),
+(7, 5, 'Test publication title', 'Testing publication content', '2022-03-17 02:43:47.000000', 'public');
 
 -- --------------------------------------------------------
 
@@ -147,19 +150,19 @@ ALTER TABLE `publication_comment`
 -- AUTO_INCREMENT for table `author`
 --
 ALTER TABLE `author`
-  MODIFY `author_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `author_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `profile`
 --
 ALTER TABLE `profile`
-  MODIFY `profile_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `profile_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `publication`
 --
 ALTER TABLE `publication`
-  MODIFY `publication_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `publication_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `publication_comment`
