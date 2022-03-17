@@ -1,8 +1,4 @@
-<?php require APPROOT . '/views/includes/header.php'; 
-?>
-
-
-
+<?php require APPROOT . '/views/includes/header.php'; ?>
 <h1>Edit publication</h1>
 
 <form action='' method='post'>

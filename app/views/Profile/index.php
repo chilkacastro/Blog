@@ -1,41 +1,8 @@
-<<<<<<< HEAD
-<?php require APPROOT . '/views/includes/header.php'; 
-?>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <?php
-                if (!empty($data["publications"])) {
-                    foreach($data["publications"] as $publication){
-                    echo" <a class='nav-link' href='/Blog/Profile/editProfile/$publication->profile_id'>Edit profile</a>"; 
-                }
-                }?>
-
-                <!-- <a class="nav-link" href="/Blog/Profile/editProfile">Edit profile</a> -->
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Blog/Profile/createPublication">Create a publication</a>
-            </li>
-
-
-        </ul>
-
-    </div>
-</nav>
-
-<h1>Profile </h1>
-<table class="table table-bordered">
-=======
 <?php require APPROOT . '/views/includes/header.php'; ?>
 <h1 class= "text-center mt-3">Profile</h1>
 <p class= "text-center mt-3">Nothing here yet to show information of Author</p>
 <h1 class= "text-center mt-3">Publications</h1>
 <table class="container table table-bordered">
->>>>>>> 84769336d7b1723763354e75a8d953e556aaf59d
     <tr>
         <td>Title</td>
         <td>Date</td>
