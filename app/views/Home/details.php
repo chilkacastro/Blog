@@ -1,8 +1,8 @@
 <?php require APPROOT . '/views/includes/header.php'; ?>
 
-<h1 class="title"></h1>  
-<p></p>     
-        <?php
+<h1 class="title"></h1>
+<p></p>
+<?php
         if (!empty($data["publications"])) {
             foreach($data["publications"] as $publication){
                 echo"<h1>

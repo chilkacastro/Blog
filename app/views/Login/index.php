@@ -11,16 +11,19 @@
                             <h3 class="mb-5">Sign in</h3>
 
                             <div class="form-outline mb-4">
-                                <input type="text" class="form-control form-control-lg" id="usernamex-2" name="username" placeholder="Username">
+                                <input type="text" class="form-control form-control-lg" id="usernamex-2" name="username"
+                                    placeholder="Username">
                             </div>
 
                             <div class="form-outline mb-4">
-                                <input type="password" class="form-control form-control-lg" id="passwordX-2" name="password" placeholder="Password">
+                                <input type="password" class="form-control form-control-lg" id="passwordX-2"
+                                    name="password" placeholder="Password">
                             </div>
 
                             <div class='mt-2'>
                                 <button type="submit" name="login" class="btn btn-primary text-center">Login</button>
-                                <p class="text-center">Not registered yet? <a href="/Blog/Login/create/">Sign Up</a> </p>
+                                <p class="text-center">Not registered yet? <a href="/Blog/Login/create/">Sign Up</a>
+                                </p>
                             </div>
 
                             <hr class="my-4">

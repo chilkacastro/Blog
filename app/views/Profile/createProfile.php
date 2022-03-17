@@ -1,17 +1,17 @@
 <?php require APPROOT . '/views/includes/header.php'; ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
- 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    
-  <h1>Create Profile View</h1>
-  </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <h1>Create Profile View</h1>
+    </div>
 </nav>
 
-    
-    
-    <form action='' method='post' enctype="multipart/form-data">
+
+
+<form action='' method='post' enctype="multipart/form-data">
 
     <div class="form-group">
         <label for="fnameinput">First Name</label>
@@ -35,7 +35,7 @@
     </div> -->
 
     <button type="submit" name='register' class="btn btn-primary">Save</button>
-    </form>
+</form>
 
-   
+
 <?php require APPROOT . '/views/includes/footer.php'; ?>

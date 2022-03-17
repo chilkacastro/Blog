@@ -2,29 +2,29 @@
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
- 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-    <li class="nav-item">
-        <a class="nav-link" href="/Blog/Profile/getPublications">Edit profile</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/Blog/Profile/editPublication">Edit a publication</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/Blog/Profile/createPublication">Create a publication</a>
-      </li>
-</li>
-     
-    </ul>
-   
-  </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/Blog/Profile/getPublications">Edit profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Blog/Profile/editPublication">Edit a publication</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Blog/Profile/createPublication">Create a publication</a>
+            </li>
+            </li>
+
+        </ul>
+
+    </div>
 </nav>
 
-    <h1>New publication</h1>
-    
-    <form action='' method='post'>
+<h1>New publication</h1>
+
+<form action='' method='post'>
 
     <div class="form-group">
         <label for="titleinput">Title</label>
@@ -37,8 +37,8 @@
     <div class="form-group">
         <label for="status">Status:</label>
         <br>
-       <input type="radio" value="public" id="public" name="status">
-       <label for="public">Public</label>
+        <input type="radio" value="public" id="public" name="status">
+        <label for="public">Public</label>
 
         <input type="radio" id="private" value="private" name="status">
         <label for="private">Private</label>
@@ -47,7 +47,7 @@
 
     <button type="submit" name="upload" class="btn-btn-primary">Upload</button>
 
-    </form>
+</form>
 
-   
+
 <?php require APPROOT . '/views/includes/footer.php'; ?>

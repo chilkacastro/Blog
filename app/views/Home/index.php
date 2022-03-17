@@ -11,7 +11,9 @@
 
                 <form action="#" method="get" id="searchForm" class="input-group">
                     <div class="input-group-btn search-panel">
-                        <select name="search_param" id="search_param" class="btn btn-dark dropdown-toggle form-select form-select-sm" aria-label=".form-select-sm example" data-toggle="dropdown">
+                        <select name="search_param" id="search_param"
+                            class="btn btn-dark dropdown-toggle form-select form-select-sm"
+                            aria-label=".form-select-sm example" data-toggle="dropdown">
                             <option value="all">All</option>
                             <option value="author">Author</option>
                             <option value="title">Title</option>
@@ -33,15 +35,15 @@
 
 
 
-    
+
 </nav>
-    <table class="table table-bordered">
-        <tr>
-            <td>Title</td>
-            <td>Date</td>
-            <td>Author</td>
-        </tr>
-        <?php
+<table class="table table-bordered">
+    <tr>
+        <td>Title</td>
+        <td>Date</td>
+        <td>Author</td>
+    </tr>
+    <?php
         if (!empty($data["publications"])) {
             foreach($data["publications"] as $publication){
                 echo"<td>
@@ -53,10 +55,10 @@
             }
         }
         ?>
-    </table>
+</table>
 
 
-   
+
 <?php
 if(!empty($data['msg'])){
     echo '<div class="alert alert-danger" role="alert">'.
