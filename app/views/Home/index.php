@@ -31,11 +31,12 @@
         <td>Date</td>
         <td>Author</td>
     </tr>
+
     <?php
-    if (!empty($data["publications"])) {
-        foreach ($data["publications"] as $publication) {
-            echo "<td>
-                <a href='/Blog/Home/details/$publication->publication_title'>$publication->publication_title</a>
+     if (!empty($data["publications"])) {
+            foreach($data["publications"] as $publication){
+                echo"<td>
+                <a href='/Blog/Home/details/$publication->publication_id'>$publication->publication_title</a>
                 </td>";
             echo "<td>$publication->timestamp</td>";
             echo "<td>$publication->first_name $publication->middle_name $publication->last_name</td>";
@@ -43,13 +44,14 @@
         }
     }
     ?>
+
 </table>
-<!-- Chilka: I dont think this one is needed
+
 <?php
 if (!empty($data['msg'])) {
     echo '<div class="alert alert-danger" role="alert">' .
         $data['msg'] . '
     </div>';
 }
-?> -->
+?> 
 <?php require APPROOT . '/views/includes/footer.php'; ?>

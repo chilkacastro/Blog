@@ -29,4 +29,9 @@ class Home extends Controller
 
     }
 
+    public function details($publication_id) {
+        $publication = $this->publicationModel->getPublication($publication_id);
+
+        $this->view('Home/details', $publication);
+    }
 }
