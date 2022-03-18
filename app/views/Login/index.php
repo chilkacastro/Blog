@@ -12,18 +12,18 @@
 
                             <div class="form-outline mb-4">
                                 <label for="username">Username</label>
-                                <input type="text" class="form-control form-control-md" id="usernamex-2" name="username" placeholder="Username">
+                                <input type="text" class="form-control" id="usernamex-2" name="username" placeholder="Username">
                             </div>
 
                             <div class="form-outline mb-4">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control form-control-md" id="passwordX-2" name="password" placeholder="Password">
+                                <input type="password" class="form-control id="passwordX-2" name="password" placeholder="Password">
                             </div>
 
                             <div class="mt-2 d-flex justify-content-center">
                                 <button type="submit" name="login" class="btn btn-primary text-center">Login</button>
-                              
                             </div>
+
                               <p class="text-center mt-3">Not registered yet? <a href="/Blog/Login/create/">Sign Up</a></p>
                             <hr class="my-4">
 

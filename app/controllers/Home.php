@@ -18,8 +18,6 @@ class Home extends Controller
 
     }
 
-
-
     // haven't done
     public function searchByAuthor(){
         $publications = $this->publicationModel->getAllPublicationsByAuthor();

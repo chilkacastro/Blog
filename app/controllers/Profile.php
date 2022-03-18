@@ -88,7 +88,6 @@ class Profile extends Controller{
             echo 'Please wait we are deleting the user for you!';
             echo '<meta http-equiv="Refresh" content=".2; url=/Blog/Profile">';
         }
-
     }
 
     public function editProfile($author_id) {
