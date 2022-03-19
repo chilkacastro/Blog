@@ -21,7 +21,11 @@ class Home extends Controller
 
     // haven't done
     public function searchByAuthor(){
-        $publications = $this->publicationModel->getAllPublicationsByAuthor();
+        if (isset($_POST['submit'])) {
+            $keywords = $_POST['keywords'];
+        }
+        
+        $publications = $this->publicationModel->getAllPublicationsByAuthor($keywords);
         $data = [
             "publications" => $publications
         ];
