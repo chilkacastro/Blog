@@ -16,7 +16,7 @@ class publicationModel
 
         // Improved query
         $this->db->query(
-                "SELECT publication.publication_id, publication.publication_title, publication.publication_text, publication.timestamp, publication.publication_status 
+                "SELECT publication.publication_id, publication.publication_title, publication.publication_text, publication.timestamp, publication.publication_status,
                 profile.first_name, profile.middle_name, profile.last_name
                 FROM publication INNER JOIN profile
                 ON publication.profile_id = profile.profile_id
