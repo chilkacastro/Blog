@@ -13,8 +13,8 @@ class commentModel
         $this->db->query("INSERT INTO publication_comment (profile_id, publication_id, publication_comment_text, timestamp) 
                 values ((SELECT profile_id FROM profile WHERE author_id = $authorID), :publication_id, :publication_comment_text, now())");
  
-        $this->db->bind(':publication_comment_text', $data['publication_comment_text']);
-        $this->db->bind(':publication_id', $data['publication_id']);
+        $this->db->bind(':publication_comment_text', $data['comment']);
+        $this->db->bind(':publication_id', $data['pub_id']);
         return ($this->db->execute()); // returns true if success and false if failure
     }
 
