@@ -1,5 +1,4 @@
 <?php require APPROOT . '/views/includes/header.php'; ?>
-<!-- See the post even if not an author -->
 
 <section class="vh-100">
     <div class="py-5 h-100">
@@ -7,6 +6,7 @@
             <div class="card shadow-2-strong" style="border-radius: 1rem;">
                 <div class="card-body p-4">
                     <h1> <?php echo 'Title: ' . $data->publication_title ?> </h1>
+                    <h5> <?php echo 'Author:' . $data->first_name . ' ' . $data->middle_name . ' ' . $data->last_name?></h5>
                     <h5> <?php echo 'Published Date:' . date(" m/d/Y", strtotime($data->timestamp)) . '<br><br>' ?></h5>
                     <div class="card-body">
                         <p> <?php echo $data->publication_text ?> </p>
@@ -33,11 +33,10 @@
                     <div class="col-md-8 col-lg-6 col-xl-10 container">
                             <div class="card p-3 shadow-2-strong" style="border-radius: 1rem;"">
                                 <div class="form-outline">
-                                    <textarea class="form-control" id="textAreaExample" rows="4"  placeholder="Write comment..." style="resize: none;"></textarea>
+                                    <textarea class="form-control" id="commentTextArea" rows="4" placeholder="Write comment..." style="resize: none;"></textarea>
                                 </div>
                                 <div class="d-flex justify-content-end mt-3 mr-4">
-                                    <button type="button" class="btn btn-success">Submit</button>
-                                </button>
+                                    <button type="button" id="commentSubmit" class="btn btn-success">Submit</button>
                                 </div>
                             </div>
                     </div>

@@ -18,9 +18,9 @@
 
                                 <div class="form-group">
                                     <label for="status" class="pr-2">Status:</label>
-                                    <input type="radio" value="public" id="public" name="status">
+                                    <input type="radio"  id="public" value="public" name="status" <?php echo ($data->publication_status == 'public' ? 'checked="checked"': '');?>>
                                     <label for="public" class="pr-2">Public</label>
-                                    <input type="radio" id="private" value="private" name="status">
+                                    <input type="radio" id="private" value="private" name="status" <?php echo ($data->publication_status == 'private' ? 'checked="checked"': '');?>>
                                     <label for="private">Private</label>
                                 </div>
                                 <div class="d-flex justify-content-center">

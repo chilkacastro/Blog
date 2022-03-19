@@ -4,6 +4,7 @@ class Home extends Controller
     public function __construct()
     {
         $this->publicationModel = $this->model('publicationModel');
+        $this->commentModel = $this->model('commentModel');
     }
 
     // WILL LIST ALL THE PUBLICATIONS
@@ -33,5 +34,12 @@ class Home extends Controller
         $publication = $this->publicationModel->getPublication($publication_id);
 
         $this->view('Home/details', $publication);
+    }
+
+    public function createComment($data) {
+        // comment button clicked
+       if (isset($POST['commentSubmit'])) {
+           $this->commentModel->createComment($data); // add comment to the database
+        }
     }
 }

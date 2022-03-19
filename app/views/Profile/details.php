@@ -5,6 +5,7 @@
             <div class="card shadow-2-strong" style="border-radius: 1rem;">
                 <div class="card-body p-4">
                     <h1> <?php echo 'Title: ' . $data->publication_title ?> </h1>
+                    <h5> <?php echo 'Author:' . $data->first_name . ' ' . $data->middle_name . ' ' . $data->last_name?></h5>
                     <h5> <?php echo 'Published Date:' . date(" m/d/Y", strtotime($data->timestamp)) . '<br><br>' ?></h5>
                     <div class="card-body">
                         <p> <?php echo $data->publication_text ?> </p>
