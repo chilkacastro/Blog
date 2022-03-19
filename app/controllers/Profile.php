@@ -15,8 +15,7 @@ class Profile extends Controller{
      
         $this->view('Profile/index', $data);
     }
-
-
+    
     public function createProfile() {
         if(!isset($_POST['register'])){
             $this->view('Profile/createProfile');

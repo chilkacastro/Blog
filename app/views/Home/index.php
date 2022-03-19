@@ -21,7 +21,6 @@
         <span class="input-group-btn">
             <button type="submit" name = "submit" class="btn btn-primary">Search</button>
         </span>
-
     </form><!-- end form -->
 </div><!-- end col-md-9 -->
 
