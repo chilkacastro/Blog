@@ -30,19 +30,26 @@
                     <div class="text-center">
                          <label class="form-label text-light" for="textAreaExample">ADD A COMMENT</label>
                     </div>
+
                     <div class="col-md-8 col-lg-6 col-xl-10 container">
-                            <div class="card p-3 shadow-2-strong" style="border-radius: 1rem;"">
+                        <div class="card p-3 shadow-2-strong" style="border-radius: 1rem;"">
+                            <form action="" method="post" enctype=multipart/form-data">
                                 <div class="form-outline">
-                                    <textarea class="form-control" id="commentTextArea" rows="4" placeholder="Write comment..." style="resize: none;"></textarea>
+                                    <textarea class="form-control" id="commentTextArea" name="commentTextArea" rows="4" placeholder="Write comment..." style="resize: none;"></textarea>
                                 </div>
+
                                 <div class="d-flex justify-content-end mt-3 mr-4">
-                                    <button type="button" id="commentSubmit" class="btn btn-success">Submit</button>
+                                    <button type="submit" id="commentSubmit" name="commentSubmit" class="btn btn-success">Submit</button>
                                 </div>
-                            </div>
+
+                            </form>
+                        </div>
                     </div>
                 </div>';
         }
         ?>
+       
+        
 </section>
 
 <?php require APPROOT . '/views/includes/footer.php'; ?>
