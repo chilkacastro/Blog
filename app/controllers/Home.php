@@ -100,21 +100,14 @@ class Home extends Controller
 
         $this->view('Home/details', $publication);
     }
-
-    public function createComment($data)
-    {
-        // comment button clicked
-        if (isset($POST['commentSubmit'])) {
-            $this->commentModel->createComment($data); // add comment to the database
-        }
-    }
-     */
-
+    */
 
     public function details($publication_id)
     {
+        // For the publication part
         $publication = $this->publicationModel->getPublication($publication_id);
-        $this->view('Home/details', $publication);
+       
+        // to submit a comment
         if (isset($_POST['commentSubmit'])) {
             $data = [
                 "comment" => trim($_POST['commentTextArea']),
@@ -122,8 +115,26 @@ class Home extends Controller
             ];
             $this->commentModel->createComment($data); // add comment to the database
         }
-        //PUTS ALL COMMENTS for specific publication
+
+     // show detail and comments of specific publication
         $publication_comments = $this->commentModel->getPublicationComments($publication_id);    
-        $this->view('Home/details',  $publication_comments);
+        $data = [
+          "publication" => $publication,
+          "comments" => $publication_comments,
+        ];
+         $this->view('Home/details',  $data);
     }
+
+    
+    // public function createComment($data)
+    // {
+    //       if (isset($_POST['commentSubmit'])) {
+    //     $data = [
+    //         "comment" => trim($_POST['commentTextArea']),
+    //         "pub_id" => $publication_id,
+    //     ];
+    //     $this->commentModel->createComment($data); // add comment to the database
+    // }
+    
+    
 }

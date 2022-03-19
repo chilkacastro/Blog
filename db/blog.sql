@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2022 at 03:56 AM
+-- Generation Time: Mar 19, 2022 at 09:24 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -70,7 +70,7 @@ INSERT INTO `profile` (`profile_id`, `author_id`, `first_name`, `middle_name`, `
 (2, 7, 'Phuong Thanh', '', 'Nguyen'),
 (3, 12, 'Phuong Thanh', '', 'Nguyen'),
 (4, 13, 'Phuong Thanh', '', 'Nguyen'),
-(5, 14, 'Test', 'test', 'TEST');
+(5, 14, 'Test', 'test', 'SHIT');
 
 -- --------------------------------------------------------
 
@@ -82,7 +82,7 @@ CREATE TABLE `publication` (
   `publication_id` int(20) NOT NULL,
   `profile_id` int(20) NOT NULL,
   `publication_title` varchar(50) NOT NULL,
-  `publication_text` varchar(100) NOT NULL,
+  `publication_text` varchar(3000) NOT NULL,
   `timestamp` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
   `publication_status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -92,9 +92,8 @@ CREATE TABLE `publication` (
 --
 
 INSERT INTO `publication` (`publication_id`, `profile_id`, `publication_title`, `publication_text`, `timestamp`, `publication_status`) VALUES
-(5, 3, 'This is my first post', 'abc', '2022-03-16 23:11:35.000000', 'private'),
 (6, 1, 'This is another post', 'abc', '2022-03-16 23:12:03.000000', 'public'),
-(7, 5, 'Test publication title', 'Testing publication content', '2022-03-17 02:43:47.000000', 'public');
+(13, 5, 'Hello', '', '2022-03-19 04:11:56.000000', 'public');
 
 -- --------------------------------------------------------
 
@@ -109,6 +108,16 @@ CREATE TABLE `publication_comment` (
   `publication_comment_text` varchar(500) NOT NULL,
   `timestamp` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `publication_comment`
+--
+
+INSERT INTO `publication_comment` (`publication_comment_id`, `profile_id`, `publication_id`, `publication_comment_text`, `timestamp`) VALUES
+(8, 5, 6, 'Comment to another post', '2022-03-19 03:33:44.000000'),
+(10, 5, 6, 'Comment to Thanh', '2022-03-19 04:12:14.000000'),
+(27, 5, 13, 'aaaaa', '2022-03-19 20:20:05.000000'),
+(28, 5, 13, 'aaaaa', '2022-03-19 20:23:08.000000');
 
 --
 -- Indexes for dumped tables
@@ -162,13 +171,13 @@ ALTER TABLE `profile`
 -- AUTO_INCREMENT for table `publication`
 --
 ALTER TABLE `publication`
-  MODIFY `publication_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `publication_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `publication_comment`
 --
 ALTER TABLE `publication_comment`
-  MODIFY `publication_comment_id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `publication_comment_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- Constraints for dumped tables
@@ -190,8 +199,8 @@ ALTER TABLE `publication`
 -- Constraints for table `publication_comment`
 --
 ALTER TABLE `publication_comment`
-  ADD CONSTRAINT `FK_publication_comment_profile` FOREIGN KEY (`profile_id`) REFERENCES `profile` (`profile_id`),
-  ADD CONSTRAINT `FK_publication_comment_publication` FOREIGN KEY (`publication_id`) REFERENCES `publication` (`publication_id`);
+  ADD CONSTRAINT `FK_publication_comment_profile` FOREIGN KEY (`profile_id`) REFERENCES `profile` (`profile_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_publication_comment_publication` FOREIGN KEY (`publication_id`) REFERENCES `publication` (`publication_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

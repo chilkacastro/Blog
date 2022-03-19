@@ -5,11 +5,11 @@
         <div class="col-12 col-md-8 col-lg-6 col-xl-10 container">
             <div class="card shadow-2-strong" style="border-radius: 1rem;">
                 <div class="card-body p-4">
-                    <h1> <?php echo 'Title: ' . $data->publication_title ?> </h1>
-                    <h5> <?php echo 'Author:' . $data->first_name . ' ' . $data->middle_name . ' ' . $data->last_name ?></h5>
-                    <h5> <?php echo 'Published Date:' . date(" m/d/Y", strtotime($data->timestamp)) . '<br><br>' ?></h5>
+                    <h1> <?php echo 'Title: ' . $data["publication"]->publication_title ?> </h1>
+                    <h5> <?php echo 'Author:' . $data["publication"]->first_name . ' ' . $data["publication"]->middle_name . ' ' . $data["publication"]->last_name ?></h5>
+                    <h5> <?php echo 'Published Date:' . date(" m/d/Y", strtotime($data["publication"]->timestamp)) . '<br><br>' ?></h5>
                     <div class="card-body">
-                        <p> <?php echo $data->publication_text ?> </p>
+                        <p> <?php echo $data["publication"]->publication_text ?> </p>
                     </div>
                 </div>
                 <!-- Comment icon appears only when author is not signed in -->
@@ -25,7 +25,7 @@
         <!-- Add a comment -->
         <?php
         if (isLoggedIn()) {
-            echo ' 
+            echo '
                 <div class="my-3 py-1 text-dark">
                     <div class="text-center">
                          <label class="form-label text-light" for="textAreaExample">ADD A COMMENT</label>
@@ -40,8 +40,6 @@
                                 <div class="d-flex justify-content-end mt-3 mr-4">
                                     <button type ="submit" name="commentSubmit">SUBMIT</button>
                                 </div>
-
-                                
                         </form>
                     </div>
                 </div>';
@@ -49,9 +47,15 @@
         ?>
 </section>
 <div>
-    <!-- commenting because it gives errors -->
     <?php
-       // foreach()
+    // print_r($data);
+        foreach($data["comments"] as $comment) {
+            echo "$comment->publication_comment_id";
+            echo "$comment->publication_id";
+            echo "$comment->profile_id";
+            echo "$comment->publication_comment_text";
+            echo "$comment->timestamp";
+        }
     ?>
 </div>
 
