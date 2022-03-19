@@ -43,7 +43,7 @@ class publicationModel
             "SELECT profile.first_name, profile.middle_name, profile.last_name, publication.publication_title, publication.publication_text, publication.timestamp 
             FROM profile INNER JOIN publication 
             ON publication.profile_id = profile.profile_id
-            WHERE publication_status = 'public' 
+            WHERE publication_status = 'public' AND (profile.first_name )
             ORDER BY timestamp DESC");
 
         return $this->db->getResultSet(); // controller would handle this data 

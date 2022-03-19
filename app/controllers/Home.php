@@ -20,18 +20,28 @@ class Home extends Controller
         $this->view('Home/index', $data);
     }
 
+
     /*
 
     */
     public function searchByAuthor()
     {
         $publications = $this->publicationModel->getAllPublicationsByAuthor();
-        $data = [
-            "publications" => $publications
-        ];
-
-        $this->view('Home/index', $data);
     }
+    // // haven't done
+    // public function searchByAuthor(){
+    //     if (isset($_POST['submit'])) {
+    //         $keywords = $_POST['keywords'];
+    //     }
+        
+    //     $publications = $this->publicationModel->getAllPublicationsByAuthor($keywords);
+
+    //     $data = [
+    //         "publications" => $publications
+    //     ];
+
+    //     $this->view('Home/index', $data);
+    // }
 
     /*
 
