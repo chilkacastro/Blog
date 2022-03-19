@@ -40,11 +40,11 @@ class publicationModel
     public function getAllPublicationsByAuthor($name)
     {   // modify parameter later if needed
         $this->db->query(
-            "SELECT profile.first_name, profile.middle_name, profile.last_name, publication.publication_title, publication.publication_text, publication.timestamp 
+            " SELECT profile.first_name, profile.middle_name, profile.last_name, publication.publication_title, publication.publication_text, publication.timestamp 
             FROM profile INNER JOIN publication 
             ON publication.profile_id = profile.profile_id
-            WHERE publication_status = 'public' AND (profile.first_name )
-            ORDER BY timestamp DESC");
+            WHERE publication_status = 'public' AND (lower(profile.first_name) like '%$name%' OR lower(profile.middle_name) like '%$name%' OR lower(profile.last_name) like '%$name%')
+            ORDER BY timestamp DESC;");
 
         return $this->db->getResultSet(); // controller would handle this data 
     }
