@@ -122,16 +122,8 @@ class Home extends Controller
             ];
             $this->commentModel->createComment($data); // add comment to the database
         }
-
-        $publication_comments = $this->commentModel->getPublicationComments($publication_id);
-        // to see the comments list for a specific publication
-        
-        print_r($publication_comments);   //shows the array for debugging purpose use only
-        if (!empty($publication_comments)) {
-            $data = [
-                "comments" => $publication_comments,
-            ];
-            $this->view('Home/details', $data);
-        }
+        //PUTS ALL COMMENTS for specific publication
+        $publication_comments = $this->commentModel->getPublicationComments($publication_id);    
+        $this->view('Home/details',  $publication_comments);
     }
 }

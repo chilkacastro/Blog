@@ -38,24 +38,21 @@
                                     <textarea class="form-control" id="commentTextArea" name="commentTextArea" rows="4" placeholder="Write comment..." style="resize: none;"></textarea>
                                 </div>
                                 <div class="d-flex justify-content-end mt-3 mr-4">
-                                    <button type ="submit" name="commentSubmit">SUBMIT</a></button>
+                                    <button type ="submit" name="commentSubmit">SUBMIT</button>
                                 </div>
-                            </form>
 
-                        </div>
+                                
+                        </form>
                     </div>
                 </div>';
         }
         ?>
 </section>
-
 <div>
     <!-- commenting because it gives errors -->
-    <!-- <?php
-    //     foreach ($data['comments'] as $comment) {
-    //         echo "<br>$comment->publication_comment_text";
-    //    }
-    
-    ?> -->
+    <?php
+       // foreach()
+    ?>
 </div>
+
 <?php require APPROOT . '/views/includes/footer.php'; ?>
