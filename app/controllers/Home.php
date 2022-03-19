@@ -117,16 +117,21 @@ class Home extends Controller
         $this->view('Home/details', $publication);
         if (isset($_POST['commentSubmit'])) {
             $data = [
-                "publication_comment_text" => trim($_POST['commentTextArea']),
-                "publication_id" => $publication_id,
+                "comment" => trim($_POST['commentTextArea']),
+                "pub_id" => $publication_id,
             ];
             $this->commentModel->createComment($data); // add comment to the database
         }
 
         $publication_comments = $this->commentModel->getPublicationComments($publication_id);
         // to see the comments list for a specific publication
+        
+        print_r($publication_comments);   //shows the array for debugging purpose use only
         if (!empty($publication_comments)) {
-            $this->view('Home/details', $publication_comments);
+            $data = [
+                "comments" => $publication_comments,
+            ];
+            $this->view('Home/details', $data);
         }
     }
 }

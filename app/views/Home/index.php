@@ -5,10 +5,11 @@
 <!-- search  -->
 <div class="col-md-9 col-md-push-1 container">
     <h3 class="text-center mt-3">Publications</h3>
+
     <form action="/Blog/Home/search" method="post" id="searchForm" class="input-group container d-flex justify-content-center">
         <div class="input-group-btn search-panel">
             <select name="search_param" id="search_param" class="btn btn-dark dropdown-toggle form-select form-select-sm" aria-label=".form-select-sm example" data-toggle="dropdown">
-                <option value="all">All</option>
+                <option value="all"><a href="/Blog/Home/searchByAuthor/">All</a></option>
                 <option value="author">Author</option>
                 <option value="title">Title</option>
                 <option value="content">Content</option>
@@ -19,8 +20,10 @@
     
 
         <span class="input-group-btn">
-            <button type="submit" name="submit" class="btn btn-primary">Search</button>
-        </span>
+
+	    <button type="submit" name="submit" class="btn btn-primary">Search</button>
+
+	</span>
     </form><!-- end form -->
 
     <?php
@@ -48,9 +51,9 @@
             echo "<td>
                 <a href='/Blog/Home/details/$publication->publication_id'>$publication->publication_title</a>
                 </td>";
-            echo "<td>$publication->timestamp</td>";
-            echo "<td>$publication->first_name $publication->middle_name $publication->last_name</td>";
-            echo "</tr>";
+                echo "<td>$publication->timestamp</td>";
+                echo "<td>$publication->first_name $publication->middle_name $publication->last_name</td>";
+                echo "</tr>";
         }
     }
     ?>
