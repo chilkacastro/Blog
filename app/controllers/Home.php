@@ -35,13 +35,18 @@ class Home extends Controller
             $search_param = trim($_POST['search_param']);
 
 
-
             //--------------------start search----------------------------------
+            if ($search_param == "all") {
+                echo "This is display all()<br>";
+                $this->index();
+            }
+
             if ($search_param != "all" && $keywords == null) { // check that the keyword is not empty for searching by author/title/content
+                $this->index();
                 echo "Please enter the keyword which you want to search!";
             } else {
                 switch ($search_param) {
-                    
+
                     case "author":
                         echo "This is search By Author()<br>";
                         $publications = $this->publicationModel->getAllPublicationsByAuthor($keywords);
@@ -99,7 +104,7 @@ class Home extends Controller
     }
      */
 
-   
+
     public function details($publication_id)
     {
         $publication = $this->publicationModel->getPublication($publication_id);
@@ -111,12 +116,11 @@ class Home extends Controller
             ];
             $this->commentModel->createComment($data); // add comment to the database
         }
-        
+
         $publication_comments = $this->commentModel->getPublicationComments($publication_id);
         // to see the comments list for a specific publication
         if (!empty($publication_comments)) {
             $this->view('Home/details', $publication_comments);
         }
     }
-
 }
