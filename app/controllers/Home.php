@@ -42,8 +42,14 @@ class Home extends Controller
             }
 
             if ($search_param != "all" && $keywords == null) { // check that the keyword is not empty for searching by author/title/content
-                $this->index();
-                echo "Please enter the keyword which you want to search!";
+                // $this->index();
+
+                $data = [
+                    'msg' => "Please enter the keyword which you want to search!",
+                ];
+                $this->view('Home/index', $data);
+                // echo '<p style="font-size:24pt;color:red;text-align:center">'.$_FILES['myfile']['name']."上传成功".'<p>';
+                // echo '<p style="font-size:18pt;color:red;text-align:center">' . "Please enter the keyword which you want to search!" . '</p>';
             } else {
                 switch ($search_param) {
 

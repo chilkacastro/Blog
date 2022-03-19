@@ -16,16 +16,26 @@
         </div>
 
         <input type="text" class="form-control col-6" name="keywords" placeholder="Enter something...">
-        <!-- <input type="submit" class="form-control col-6" name="submit" value="Search"> -->
+    
 
         <span class="input-group-btn">
-            <button type="submit" name = "submit" class="btn btn-primary">Search</button>
+            <button type="submit" name="submit" class="btn btn-primary">Search</button>
         </span>
     </form><!-- end form -->
+
+    <?php
+
+    if (!empty($data['msg'])) {
+        echo '<div class="alert alert-default" role="alert" style="text-align:center;font-size:18px;background-color:#b54f4f;">' .
+            $data['msg'] . '
+     </div>';
+    }
+    ?>
 </div><!-- end col-md-9 -->
 
-</nav>
+<!-- diaplay publications -->
 <table class="table table-bordered container">
+    <h3 class="text-center mt-3">Publications</h3>
     <tr>
         <td>Title</td>
         <td>Date</td>
@@ -33,9 +43,9 @@
     </tr>
 
     <?php
-     if (!empty($data["publications"])) {
-            foreach($data["publications"] as $publication){
-                echo"<td>
+    if (!empty($data["publications"])) {
+        foreach ($data["publications"] as $publication) {
+            echo "<td>
                 <a href='/Blog/Home/details/$publication->publication_id'>$publication->publication_title</a>
                 </td>";
             echo "<td>$publication->timestamp</td>";
@@ -47,11 +57,5 @@
 
 </table>
 
-<?php
-if (!empty($data['msg'])) {
-    echo '<div class="alert alert-danger" role="alert">' .
-        $data['msg'] . '
-    </div>';
-}
-?> 
+
 <?php require APPROOT . '/views/includes/footer.php'; ?>
