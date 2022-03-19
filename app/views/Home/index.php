@@ -5,7 +5,11 @@
 <!-- search  -->
 <div class="col-md-9 col-md-push-1 container">
     <h3 class="text-center mt-3">Publications</h3>
+<<<<<<< HEAD
     <form action="#" method="get" id="searchForm" class="input-group container d-flex justify-content-center">
+=======
+    <form action="/Blog/Home/search" method="post" id="searchForm" class="input-group container d-flex justify-content-center">
+>>>>>>> fbeff33f548ed9a9fafb64b5986345358445e949
         <div class="input-group-btn search-panel">
             <select name="search_param" id="search_param" class="btn btn-dark dropdown-toggle form-select form-select-sm" aria-label=".form-select-sm example" data-toggle="dropdown">
                 <option value="all"><a href="/Blog/Home/searchByAuthor/">All</a></option>
@@ -15,7 +19,12 @@
             </select>
         </div>
 
+<<<<<<< HEAD
         <input type="text" class="form-control col-6" name="x" placeholder="Enter something...">
+=======
+        <input type="text" class="form-control col-6" name="keywords" placeholder="Enter something...">
+        <!-- <input type="submit" class="form-control col-6" name="submit" value="Search"> -->
+>>>>>>> fbeff33f548ed9a9fafb64b5986345358445e949
 
         <span class="input-group-btn">
             <button type="submit" class="btn btn-primary">Search</button>
