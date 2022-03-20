@@ -48,8 +48,6 @@ class Home extends Controller
                     'msg' => "Please enter the keyword which you want to search!",
                 ];
                 $this->view('Home/index', $data);
-                // echo '<p style="font-size:24pt;color:red;text-align:center">'.$_FILES['myfile']['name']."上传成功".'<p>';
-                // echo '<p style="font-size:18pt;color:red;text-align:center">' . "Please enter the keyword which you want to search!" . '</p>';
             } else {
                 switch ($search_param) {
 
@@ -64,6 +62,12 @@ class Home extends Controller
                         break;
                     case "title":
                         echo "This is search By title()<br>";
+                        $publications = $this->publicationModel->getAllPublicationsByTitle($keywords);
+                        $data = [
+                            "publications" => $publications
+                        ];
+
+                        $this->view('Home/index', $data);
                         break;
                     case "content":
                         echo "This is search By content()<br>";
