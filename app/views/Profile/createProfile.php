@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/Blog/Home">Home</a>
+                        <a class="nav-link disabled" href="/Blog/Home">Home</a>
                     </li>
                     <?php
                     if (isLoggedIn()) {

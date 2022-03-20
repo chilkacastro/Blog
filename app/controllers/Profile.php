@@ -13,16 +13,23 @@ class Profile extends Controller
 
     public function index()
     {
+
         $profile = $this->profileModel->getProfile();
         $publications = $this->profileModel->getAuthorPublications();
         $publication_comments = $this->commentModel->getAuthorPublicationComments();
-        $data = [
-            "publications" => $publications,
-            "authorComments" => $publication_comments,
-            "profile" => $profile
-        ];
+        if (!empty($profile)) {
+                
+            $data = [
+                "publications" => $publications,
+                "authorComments" => $publication_comments,
+                "profile" => $profile
+            ];
 
-        $this->view('Profile/index', $data);
+            $this->view('Profile/index', $data);
+        }
+        else {
+            $this->view('Profile/createProfile');
+        }
     }
 
     public function createProfile()
@@ -40,7 +47,7 @@ class Profile extends Controller
             if ($this->profileModel->createProfile($data)) {
                 echo 'Please wait we are creating a profile for you!';
                 // header('Location: /Blog/Profile')
-                echo '<meta http-equiv="Refresh" content="2; url=Blog/Profile">';
+                echo '<meta http-equiv="Refresh" content="2; url=Blog/Profile/index">';
             }
         }
     }
