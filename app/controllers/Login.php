@@ -41,11 +41,9 @@ class Login extends Controller
 
     public function create()
     {
-        // if the button isnt clicked
         if (!isset($_POST['signup'])) {
             $this->view('Login/create');
         }
-        // if the user clicks the signup button
         else {
             //
             $user = $this->loginModel->getUser($_POST['username']);
@@ -75,12 +73,10 @@ class Login extends Controller
                                 $data = [
                                     'msg' => "Welcome, $user->username!",
                                 ];
+                                header('Location: /Blog/Profile/createProfile');
+                                echo 'Please wait while creating account for ' . trim($_POST['username']);
                                 $this->view('Home/index', $data);
                             }
-                            //header('Location: /Blog/Profile/createProfile'); //DONT USE THIS IT WILL GIVE ERROR
-                            echo '<meta http-equiv="Refresh" content=".1; url=/Blog/Profile/createProfile">';
-                            // echo 'Please wait while creating account for ' . trim($_POST['username']);
-
                         }
                     }
                 }

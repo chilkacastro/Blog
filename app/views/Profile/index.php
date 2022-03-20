@@ -1,5 +1,5 @@
 <?php require APPROOT . '/views/includes/header.php'; ?>
-<h1 class="text-center mt-3">Profile</h1>
+<h1 class="mt-3 ml-3">Welcome, <?php echo $data['profile']->first_name . ' ' .  $data['profile']->middle_name . ' ' . $data['profile']->last_name?> </h1>
 <hr>
 <h3 class="text-center mt-3">Publications</h3>
 <table class="container table table-bordered">
@@ -56,11 +56,11 @@
             // </td>";
              echo
             "<td>
-                <a href=''>$comment->publication_comment_text</a>
+                <p>$comment->publication_comment_text</p>
             </td>";
              echo
             "<td>
-                <a href=''>$comment->publication_title</a>
+                <a href='/Blog/Profile/details/$comment->publication_id'>$comment->publication_title</a>
             </td>";
             echo "<td>" . date(" m/d/Y", strtotime($comment->timestamp)) . "</td>";
             echo "<td>

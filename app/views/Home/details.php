@@ -17,9 +17,9 @@
         <?php
         if (!isLoggedIn()) {
             echo ' 
-            <div class="card-body p-3 shadow-2-strong" style="border-radius: 1rem;"">
+            <div class="card-body container" style="border-radius: 1rem;"">
                 <div class="my-3 py-1 text-dark">
-                    <div class="container d-flex justify-content-center mt-2">
+                    <div class="container d-flex justify-content-center mt-1">
                         <a class="nav-link" href="/Blog/Login/"><i class="fa-regular fa-comment"></i> Add a comment </a></li>
                     </div>
                 </div>

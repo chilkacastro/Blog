@@ -34,9 +34,9 @@ if (isLoggedIn()) {
             Profile
         </a>
         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li><a class="dropdown-item" href="/Blog/Profile">View Profile</a></li>
+           <li><a class="dropdown-item" href="/Blog/Profile">View Profile</a></li>
             <li><a class="dropdown-item" name="editProfile" href="/Blog/Profile/editProfile/' . $_SESSION['user_id'] . '">Edit Profile</a></li>
-            <li><a class="nav-link" href="/Blog/Profile/createPublication">Create a publication</a></li>
+            <li><a class="dropdown-item" href="/Blog/Profile/createPublication">Create a publication</a></li>
         </ul>
         </li>
     </ul>

@@ -13,11 +13,13 @@ class Profile extends Controller
 
     public function index()
     {
+        $profile = $this->profileModel->getProfile();
         $publications = $this->profileModel->getAuthorPublications();
         $publication_comments = $this->commentModel->getAuthorPublicationComments();
         $data = [
             "publications" => $publications,
-            "authorComments" => $publication_comments
+            "authorComments" => $publication_comments,
+            "profile" => $profile
         ];
 
         $this->view('Profile/index', $data);
@@ -27,6 +29,7 @@ class Profile extends Controller
     {
         if (!isset($_POST['register'])) {
             $this->view('Profile/createProfile');
+           // $this->view('Profile/createProfile');
         } else {
             $data = [
                 'fname' => trim($_POST['fname']),
@@ -117,7 +120,7 @@ class Profile extends Controller
 
     public function editProfile($author_id)
     {
-        $profile = $this->profileModel->getProfile($author_id);
+        $profile = $this->profileModel->getProfile();
 
         if (!isset($_POST['editProfile'])) {
             $this->view('Profile/editProfile', $profile);

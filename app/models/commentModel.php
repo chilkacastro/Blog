@@ -74,7 +74,7 @@ class commentModel
     public function editComment($data) {
         $this->db->query("UPDATE publication_comment SET publication_comment_text = :publication_comment_text
             WHERE publication_comment_id = :publication_comment_id");
-            $this->db->bind(':publication_title', $data['comment_text']);
+            $this->db->bind(':publication_comment_text', $data['comment_text']);
             $this->db->bind(':publication_comment_id', $data['comment_id']);
         return $this->db->execute();
     }

@@ -15,17 +15,14 @@ class profileModel
         $this->db->bind(':middle_name', $data['mname']);
         $this->db->bind(':last_name', $data['lname']);
 
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+        return $this->db->execute();
     }
 
-    public function getProfile($author_id)
-    {
+    public function getProfile()
+    {   
+        $authorID = $_SESSION['user_id'];
         $this->db->query("SELECT * FROM profile WHERE author_id = :author_id");
-        $this->db->bind(':author_id', $author_id);
+        $this->db->bind(':author_id', $authorID);
         return $this->db->getSingle();
     }
 
@@ -36,11 +33,7 @@ class profileModel
         $this->db->bind(':middle_name', $data['mname']);
         $this->db->bind(':last_name', $data['lname']);
         $this->db->bind(':profile_id', $data['profile_id']);
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+        return $this->db->execute();
     }
 
     public function createPublication($data)
@@ -52,12 +45,7 @@ class profileModel
         $this->db->bind(':publication_title', $data['title']);
         $this->db->bind(':publication_text', $data['text']);
         $this->db->bind(':publication_status', $data['status']);
-
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+        return $this->db->execute();
     }
 
     public function editPublication($data)
@@ -68,23 +56,14 @@ class profileModel
         $this->db->bind(':publication_text', $data['text']);
         $this->db->bind(':publication_status', $data['status']);
         $this->db->bind(':publication_id', $data['publication_id']);
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+        return $this->db->execute();
     }
 
     public function delete($data)
     {
         $this->db->query("DELETE FROM publication WHERE publication_id=:publication_id");
         $this->db->bind('publication_id', $data['publication_id']);
-
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+        return $this->db->execute();
     }
 
     //As an author, I can see all of my posts on my profile page
@@ -113,5 +92,4 @@ class profileModel
         $this->db->bind(':publication_id', $publication_id);
         return $this->db->getSingle();
     }
-
 }
