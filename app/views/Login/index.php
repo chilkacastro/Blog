@@ -1,4 +1,4 @@
-<?php require APPROOT . '/views/includes/header.php';?>
+<?php require APPROOT . '/views/includes/header.php'; ?>
 
 <section class="vh-100">
     <div class="container py-5 h-100">
@@ -12,27 +12,41 @@
 
                             <div class="form-outline mb-4">
                                 <label for="username">Username</label>
-                                <input type="text" class="form-control" id="usernamex-2" name="username" placeholder="Username">
+                                <input type="text" class="form-control
+                                <?php 
+                                    echo (!empty($data['username_error'])) ? 'is-invalid' : ''; 
+                                ?>" id="username" name="username" placeholder="Username">
+                                <span class="invalid-feedback">
+                                    <?php echo $data['username_error']; ?> 
+                                </span>
                             </div>
 
                             <div class="form-outline mb-4">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control id="passwordX-2" name="password" placeholder="Password">
+                                <input type="password" class="form-control 
+                                <?php 
+                                    echo (!empty($data['password_error'])) ? 'is-invalid' : ''; 
+                                ?>" id="password" name="password" placeholder="Password">
+                                <span class="invalid-feedback">
+                                    <?php 
+                                        echo $data['password_error']; 
+                                    ?> 
+                                </span>
                             </div>
 
                             <div class="mt-2 d-flex justify-content-center">
                                 <button type="submit" name="login" class="btn btn-primary text-center">Login</button>
                             </div>
 
-                              <p class="text-center mt-3">Not registered yet? <a href="/Blog/Login/create/">Sign Up</a></p>
+                            <p class="text-center mt-3">Not registered yet? <a href="/Blog/Login/create/">Sign Up</a></p>
                             <hr class="my-4">
 
                             <?php
 
-                            if ($data != []) {
-                                echo '<div class="alert alert-default" role="alert" style="background-color:#b54f4f;">' .
+                            if (!empty($data['msg'])) {
+                                echo '<div class="alert alert-danger" role="alert">' .
                                     $data['msg'] . '
-                                 </div>';
+                             </div>';
                             }
                             ?>
                         </form>
