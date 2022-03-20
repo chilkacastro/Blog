@@ -19,7 +19,7 @@
             echo ' 
         <div class="my-3 py-1 text-dark">
             <div class="text-center">
-                    <label class="form-label text-light" for="textAreaExample">ADD A COMMENT</label>
+                    <label class="form-label text-dark" for="textAreaExample">ADD A COMMENT</label>
             </div>
             <div class="col-md-8 col-lg-6 col-xl-10 container">
                     <div class="card p-3 shadow-2-strong" style="border-radius: 1rem;"">
@@ -35,9 +35,11 @@
             '<hr>
                     ';
             foreach ($data["comments"] as $comment) {
+                echo "<hr>";
                 echo $comment->first_name . ' ' . $comment->middle_name . ' ' . $comment->last_name . ' ' . date(" m/d/Y H:i:s", strtotime($comment->timestamp));
                 echo "<br>$comment->publication_comment_text<br>";
-                echo "<hr>";
+               
+               
             };
 
             '</div>
