@@ -26,6 +26,7 @@ class Login extends Controller
                             'msg' => "Welcome, $user->username!",
 
                         ];
+                        header('Location: /Blog/Home/index'); 
                         $this->view('Home/index', $data);
                     }
                     else {

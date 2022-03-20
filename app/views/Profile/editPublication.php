@@ -14,7 +14,7 @@
 
                                 <div class="form-group">
                                 <label for="textinput">Content</label>
-                                <textarea class="form-control" id="textinput" rows="5" style="resize: none;"><?php echo $data->publication_text ?></textarea>
+                                <textarea class="form-control" id="textinput" name="text" rows="5" style="resize: none;"><?php echo $data->publication_text ?></textarea>
                                 </div>
 
                                 <div class="form-group">

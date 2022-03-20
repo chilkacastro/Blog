@@ -15,7 +15,7 @@
 
                             <div class="form-group">
                                 <label for="textinput">Content</label>
-                                <textarea class="form-control" id="textinput" rows="5" placeholder="Enter text here..." style="resize: none;"></textarea>
+                                <textarea class="form-control" id="textinput" name= "text" rows="5" placeholder="Enter text here..." style="resize: none;"></textarea>
                             </div>
 
                             <div class="form-group">
