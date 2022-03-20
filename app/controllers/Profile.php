@@ -57,20 +57,40 @@ class Profile extends Controller
             $this->view('Profile/createPublication');
         } else {
             // $filename= $this->imageUpload();
-            $data = [
-                'title' => trim($_POST['title']),
-                'text' => trim($_POST['text']),
-                'status' => trim($_POST['status']),
-                'empty_title' => '',
-                'empty_text' => '',
-                'empty_status' => ''
-            ];
-        if ($this->validateData($data)) {
-            if ($this->profileModel->createPublication($data)) {
-                echo 'Please wait we are uploading the publication for you!';
-                header('Location: /Blog/Profile/index');
+            // $status = ['status' => trim($_POST['status'])];
+            if (isset($title) | isset($text) | isset($status)) {
+                $data = [
+                    'title' => trim($_POST['title']),
+                    'text' => trim($_POST['text']),
+                    // 'status' => $status->'status',
+                    'status' => trim($_POST['status']),
+                    'empty_title' => '',
+                    'empty_text' => '',
+                    'empty_status' => ''
+                ];
+
+                if ($this->validateData($data)) {
+                    if ($this->profileModel->createPublication($data)) {
+                        echo 'Please wait we are uploading the publication for you!';
+                        header('Location: /Blog/Profile/index');
+                    }
+                }  
             }
-            }            
+            // $data = [
+            //     'title' => trim($_POST['title']),
+            //     'text' => trim($_POST['text']),
+            //     // 'status' => $status->'status',
+            //     'status' => trim($_POST['status']),
+            //     'empty_title' => '',
+            //     'empty_text' => '',
+            //     'empty_status' => ''
+            // ];
+        // if ($this->validateData($data)) {
+        //     if ($this->profileModel->createPublication($data)) {
+        //         echo 'Please wait we are uploading the publication for you!';
+        //         header('Location: /Blog/Profile/index');
+        //     }
+        //     }            
         }
     }
 
@@ -82,11 +102,8 @@ class Profile extends Controller
         if (empty($data['text'])) {
             $data['empty_content'] = 'Content can not be empty';
         }
-        // if (empty($data['status'])) {
-        //     $data['empty_status'] = 'Please choose a status for your post';
-        // }
-        else {
-            $this->view('Login/create', $data);
+        if (empty($data['status'])) {
+            $data['empty_status'] = 'Please choose a status for your post';
         }
     }
 
