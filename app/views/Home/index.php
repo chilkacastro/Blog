@@ -35,7 +35,7 @@ if (!empty($data["publications"])) {
         echo "<td>
             <a href='/Blog/Home/details/$publication->publication_id'>$publication->publication_title</a>
             </td>";
-            echo "<td>$publication->timestamp</td>";
+            echo "<td>".date(" m/d/Y", strtotime($publication->timestamp)) ."</td>";
             echo "<td>$publication->first_name $publication->middle_name $publication->last_name</td>";
             echo "</tr>";
     }

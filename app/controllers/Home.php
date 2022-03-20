@@ -135,4 +135,6 @@ class Home extends Controller
     //     ];
     //     $this->commentModel->createComment($data); // add comment to the database
     // }
+
+
 }

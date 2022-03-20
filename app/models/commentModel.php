@@ -6,6 +6,9 @@ class commentModel
         $this->db = new Model;
     }
 
+    /* 
+     * Creates a comment
+     */
     public function createComment($data)
     {   
         $authorID = $_SESSION['user_id'];
@@ -17,9 +20,33 @@ class commentModel
         return ($this->db->execute()); // returns true if success and false if failure
     }
 
+    /*
+     * Gets all publication comments
+     */
     public function getPublicationComments($publication_id) {
-        $this->db->query("SELECT * FROM publication_comment WHERE publication_id = :publication_id");
+        $this->db->query(
+            "SELECT publication_comment.publication_comment_id, publication_comment.profile_id, publication_comment.publication_id, publication_comment.publication_comment_text, publication_comment.timestamp, profile.first_name, profile.middle_name, profile.last_name
+            FROM publication_comment INNER JOIN profile 
+            ON publication_comment.profile_id = profile.profile_id
+            WHERE publication_id = :publication_id");
         $this->db->bind(':publication_id', $publication_id);
         return $this->db->getResultSet();
+    }
+
+    /*
+     * Deletes a publication comment 
+     */
+    public function deletePublicationComment($publication_id) {
+        $this->db->query("SELECT * FROM publication_comment WHERE publication_id = :publication_id");
+        
+        return $this->db->execute();
+    }
+
+
+    /*
+     * Modify a publication comment
+     */
+    public function getProfileNameComment($profile_id) {
+
     }
 }
