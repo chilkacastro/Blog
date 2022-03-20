@@ -24,9 +24,9 @@ class Home extends Controller
     // haven't done
     public function search()
     {
-        echo "This is search()<br>";
+        // echo "This is search()<br>";
         if (isset($_POST['submit'])) {
-            echo "yes clicked the search<br>";
+            // echo "yes clicked the search<br>";
 
             // get the keyword
             $keywords = trim($_POST['keywords']);
@@ -37,7 +37,7 @@ class Home extends Controller
 
             //--------------------start search----------------------------------
             if ($search_param == "all") {
-                echo "This is display all()<br>";
+                // echo "This is display all()<br>";
                 $this->index();
             }
 
@@ -52,7 +52,7 @@ class Home extends Controller
                 switch ($search_param) {
 
                     case "author":
-                        echo "This is search By Author()<br>";
+                        // echo "This is search By Author()<br>";
                         $publications = $this->publicationModel->getAllPublicationsByAuthor($keywords);
                         $data = [
                             "publications" => $publications
@@ -61,7 +61,7 @@ class Home extends Controller
                         $this->view('Home/index', $data);
                         break;
                     case "title":
-                        echo "This is search By title()<br>";
+                        // echo "This is search By title()<br>";
                         $publications = $this->publicationModel->getAllPublicationsByTitle($keywords);
                         $data = [
                             "publications" => $publications
@@ -70,7 +70,7 @@ class Home extends Controller
                         $this->view('Home/index', $data);
                         break;
                     case "content":
-                        echo "This is search By content()<br>";
+                        // echo "This is search By content()<br>";
                         $publications = $this->publicationModel->getAllPublicationsByText($keywords);
                         $data = [
                             "publications" => $publications
@@ -80,8 +80,6 @@ class Home extends Controller
                         break;
                 }
             }
-        } else {
-            echo "not clicked search";
         }
     }
 
@@ -102,7 +100,7 @@ class Home extends Controller
     {
         // For the publication part
         $publication = $this->publicationModel->getPublication($publication_id);
-       
+
         // to submit a comment
         if (isset($_POST['commentSubmit'])) {
             $data = [
@@ -113,15 +111,15 @@ class Home extends Controller
         }
 
         // show detail and comments of specific publication
-        $publication_comments = $this->commentModel->getPublicationComments($publication_id);    
+        $publication_comments = $this->commentModel->getPublicationComments($publication_id);
         $data = [
-          "publication" => $publication,
-          "comments" => $publication_comments,
+            "publication" => $publication,
+            "comments" => $publication_comments,
         ];
-         $this->view('Home/details',  $data);
+        $this->view('Home/details',  $data);
     }
 
-    
+
     // public function createComment($data)
     // {
     //       if (isset($_POST['commentSubmit'])) {

@@ -39,7 +39,7 @@ class publicationModel
     public function getAllPublicationsByAuthor($name)
     {   
         $this->db->query(
-            "SELECT profile.first_name, profile.middle_name, profile.last_name, publication.publication_title, publication.publication_text, publication.timestamp 
+            "SELECT profile.first_name, profile.middle_name, profile.last_name, publication.publication_id, publication.publication_title, publication.publication_text, publication.timestamp 
             FROM profile INNER JOIN publication 
             ON publication.profile_id = profile.profile_id
             WHERE publication_status = 'public' AND (lower(profile.first_name) like '%$name%' OR lower(profile.middle_name) like '%$name%' OR lower(profile.last_name) like '%$name%')
@@ -52,7 +52,7 @@ class publicationModel
     public function getAllPublicationsByTitle($title)
     {    // modify parameter later if needed
         $this->db->query(
-            "SELECT profile.first_name, profile.middle_name, profile.last_name, publication.publication_title, publication.publication_text, publication.timestamp 
+            "SELECT profile.first_name, profile.middle_name, profile.last_name, publication.publication_id, publication.publication_title, publication.publication_text, publication.timestamp 
             FROM profile INNER JOIN publication 
             ON publication.profile_id = profile.profile_id
             WHERE publication_status = 'public' AND lower(publication.publication_title) like '%$title%'
@@ -67,7 +67,7 @@ class publicationModel
     public function getAllPublicationsByText($content)
     {   
         $this->db->query(
-        "SELECT profile.first_name, profile.middle_name, profile.last_name, publication.publication_title, publication.publication_text, publication.timestamp 
+        "SELECT profile.first_name, profile.middle_name, profile.last_name, publication.publication_id, publication.publication_title, publication.publication_text, publication.timestamp 
             FROM publication_comment INNER JOIN publication 
             ON publication_comment.publication_id = publication.publication_id
             INNER JOIN profile on profile.profile_id = publication_comment.profile_id 
