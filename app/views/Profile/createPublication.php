@@ -16,9 +16,7 @@
 
                             <div class="form-group">
                                 <label for="textinput">Content</label>
-                                <textarea class="form-control <?php echo (!empty($data['empty_text'])) ? 'is-invalid' : ''; ?>" id="textinput" name="text" rows="5" placeholder="Enter text here..." style="resize: none;"></textarea>
-                                <span class="invalid-feedback"><?php echo $data['empty_text']; ?> </span>
-
+                                <textarea class="form-control" id="textinput" name= "text" rows="5" placeholder="Enter text here..." style="resize: none;"></textarea>
                             </div>
 
                             <div class="form-group">
