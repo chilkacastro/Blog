@@ -36,8 +36,8 @@ class Profile extends Controller
     {
         if (!isset($_POST['register'])) {
             $this->view('Profile/createProfile');
-           // $this->view('Profile/createProfile');
-        } else {
+        } 
+        else {
             $data = [
                 'fname' => trim($_POST['fname']),
                 'mname' => trim($_POST['mname']),
@@ -46,7 +46,6 @@ class Profile extends Controller
 
             if ($this->profileModel->createProfile($data)) {
                 echo 'Please wait we are creating a profile for you!';
-                // header('Location: /Blog/Profile')
                 echo '<meta http-equiv="Refresh" content="2; url=Blog/Profile/index">';
             }
         }

@@ -4,6 +4,7 @@ class Login extends Controller
     public function __construct()
     {
         $this->loginModel = $this->model('loginModel');
+        $this->profileModel = $this->model('profileModel');
     }
 
     public function index()
@@ -18,12 +19,18 @@ class Login extends Controller
                 $password = $_POST['password'];
                 if (password_verify($password, $hashed_password)) {
                     //echo '<meta http-equiv="Refresh" content="2; url=/Blog/Profile">';
-                    header('Location: /Blog/Profile/');  // so it lands on correct page
                     $this->createSession($user);
-                    $data = [
-                        'msg' => "Welcome, $user->username!",
-                    ];
-                    $this->view('Home/index', $data);
+                    $profile = $this->profileModel->getProfile();
+                    if (!empty($profile)) {
+                        $data = [
+                            'msg' => "Welcome, $user->username!",
+
+                        ];
+                        $this->view('Home/index', $data);
+                    }
+                    else {
+                        header('Location: /Blog/Profile/createProfile');  // so it lands on correct page
+                    }
                 } else {
                     $data = [
                         'msg' => "Password incorrect for $user->username",

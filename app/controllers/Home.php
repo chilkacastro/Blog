@@ -95,7 +95,6 @@ class Home extends Controller
             ];
             
             $this->commentModel->createComment($data);
-            echo 'comment created';
         }
 
         // show detail and comments of specific publication
