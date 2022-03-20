@@ -12,39 +12,36 @@
                     </div>
                 </div>
                 <!-- Comment icon appears only when author is not signed in -->
-                <?php
-                if (!isLoggedIn()) {
-                    echo '<div class="container d-flex justify-content-center mt-2">
-                            <a class="nav-link" href="/Blog/Login/"><i class="fa-regular fa-comment"></i> Add a comment </a></li>
-                        </div>';
-                }
-                ?>
+<?php
+if (!isLoggedIn()) {
+    echo '<div class="container d-flex justify-content-center mt-2">
+            <a class="nav-link" href="/Blog/Login/"><i class="fa-regular fa-comment"></i> Add a comment </a></li>
+        </div>';
+}
+?>
             </div>
         </div>
         <!-- Add a comment -->
-        <?php
-        if (isLoggedIn()) {
-            echo ' 
-                <div class="my-3 py-1 text-dark">
-                    <div class="text-center">
-                         <label class="form-label text-light" for="textAreaExample">ADD A COMMENT</label>
+<?php
+if (isLoggedIn()) {
+    echo ' 
+        <div class="my-3 py-1 text-dark">
+            <div class="text-center">
+                    <label class="form-label text-light" for="textAreaExample">ADD A COMMENT</label>
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-10 container">
+                    <div class="card p-3 shadow-2-strong" style="border-radius: 1rem;"">
+                        <div class="form-outline">
+                            <textarea class="form-control" id="textAreaExample" rows="4"  placeholder="Write comment..." style="resize: none;"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-end mt-3 mr-4">
+                            <button type="button" class="btn btn-success">Submit</button>
+                        </button>
+                        </div>
                     </div>
-                    <div class="col-md-8 col-lg-6 col-xl-10 container">
-                            <div class="card p-3 shadow-2-strong" style="border-radius: 1rem;"">
-                                <div class="form-outline">
-                                    <textarea class="form-control" id="textAreaExample" rows="4"  placeholder="Write comment..." style="resize: none;"></textarea>
-                                </div>
-                                <div class="d-flex justify-content-end mt-3 mr-4">
-                                    <button type="button" class="btn btn-success">Submit</button>
-                                </button>
-                                </div>
-                            </div>
-                    </div>
-                </div>';
-        }
-        ?>
+            </div>
+        </div>';
+}
+?>
 </section>
-
-
-
 <?php require APPROOT . '/views/includes/footer.php'; ?>

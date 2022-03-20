@@ -1,5 +1,4 @@
 <?php
-
 class commentModel
 {
     public function __construct()

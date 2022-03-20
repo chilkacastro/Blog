@@ -26,9 +26,7 @@
                                 <div class="d-flex justify-content-center">
                                     <button type="submit" name="uploadPub" class="btn-btn-primary">Upload</button>
                                 </div>
-
                         </form>
-
                     </div>
                 </div>
             </div>
@@ -36,14 +34,7 @@
 
     </div>
 </section>
-
-
 <?php require APPROOT . '/views/includes/footer.php'; ?>
-
-
-
-
-
 
 
 

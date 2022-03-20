@@ -1,5 +1,4 @@
 <?php
-
     class loginModel{
         public function __construct(){
             $this->db = new Model;

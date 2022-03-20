@@ -1,9 +1,4 @@
 </div>
-
-<script src="<?php echo URLROOT; ?>/javascript/main.js"></script>
-
-
-
+<script src="<?php echo URLROOT;?>/javascript/main.js"></script>
 </body>
-
 </html>
