@@ -89,7 +89,7 @@ class Profile extends Controller
         if (isset($_POST['commentSubmit'])) {
             $data = [
                 "comment" => trim($_POST['commentTextArea']),
-                "pub_id" => $publication_id,
+                "pub_id" => $publication_id
             ];
             $this->commentModel->createComment($data); // add comment to the database
         }
@@ -98,7 +98,7 @@ class Profile extends Controller
         $publication_comments = $this->commentModel->getPublicationComments($publication_id);
         $data = [
             "publication" => $publication,
-            "comments" => $publication_comments,
+            "comments" => $publication_comments
         ];
         $this->view('Profile/details',  $data);
     }
@@ -143,9 +143,10 @@ class Profile extends Controller
 
         } else {
             $data = [
-                "comment_text" => trim($_POST['commentText'])
+                "comment_text" => trim($_POST['commentText']),
+                "comment_id" => $existing_comment->publication_comment_id
             ];
-            if ($this->profileModel->editComment($data)) {
+            if ($this->commentModel->editComment($data)) {
                 echo "Please wait we are editing your comment";
                 echo '<meta http-equiv="Refresh" content="2; url=/Blog/Profile">';
             }

@@ -17,7 +17,7 @@
                                 <input name="mname" type="text" class="form-control" id="mnameinput" value="<?php echo $data->middle_name?>">
                             </div>
                             <div class="form-outline mb-4">
-                                <label for="fnameinput">Last Name</label>
+                                <label for="fnameinput">Last Name </label>
                                 <input name="lname" type="text" class="form-control" id="lnameinput" value="<?php echo $data->last_name?>">
                             </div>
 
