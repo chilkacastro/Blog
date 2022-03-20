@@ -33,7 +33,7 @@ if (!empty($data['msg'])) {
 if (!empty($data["publications"])) {
     foreach ($data["publications"] as $publication) {
         echo "<td>
-            <a href='/Blog/Home/details/$publication->publication_id'>$publication->publication_title</a>
+            <a href='/Blog/Home/details/$publication->publication_id'> $publication->publication_title</a>
             </td>";
             echo "<td>".date(" m/d/Y", strtotime($publication->timestamp)) ."</td>";
             echo "<td>$publication->first_name $publication->middle_name $publication->last_name</td>";

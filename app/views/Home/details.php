@@ -7,6 +7,7 @@
                     <h1><?php echo 'Title: ' . $data["publication"]->publication_title ?> </h1>
                     <h5><?php echo 'Author:' . $data["publication"]->first_name . ' ' . $data["publication"]->middle_name . ' ' . $data["publication"]->last_name ?></h5>
                     <h5><?php echo 'Published Date:' . date(" m/d/Y H:i:s", strtotime($data["publication"]->timestamp)) . '<br><br>' ?></h5>
+
                     <div class="card-body">
                         <p><?php echo $data["publication"]->publication_text ?> </p>
                     </div>
@@ -51,6 +52,7 @@
                             <button type ="submit" name="commentSubmit">SUBMIT</button>
                         </div>
                     </form>
+
                 <div class="text-light">';
                 '<hr>';
                     foreach ($data["comments"] as $comment) {
@@ -58,7 +60,6 @@
                         echo "<br>$comment->publication_comment_text<br>";
                         echo "<hr>";
                     };
-
                 '</div>
 
             </div>
