@@ -10,15 +10,15 @@
                             <h3 class="mb-3 d-flex justify-content-center">EDIT PROFILE</h3>
                             <div class="form-outline mb-4">
                                 <label for="fnameinput">First Name</label>
-                                <input name="fname" type="text" class="form-control" id="fnameinput" value="<?php echo $data->first_name ?>">
+                                <input name="fname" type="text" class="form-control" id="fnameinput" value="<?php echo $data->first_name?>">
                             </div>
                             <div class="form-outline mb-4">
                                 <label for="mnameinput">Middle Name</label>
-                                <input name="mname" type="text" class="form-control" id="mnameinput" value="<?php echo $data->middle_name ?>">
+                                <input name="mname" type="text" class="form-control" id="mnameinput" value="<?php echo $data->middle_name?>">
                             </div>
                             <div class="form-outline mb-4">
                                 <label for="fnameinput">Last Name</label>
-                                <input name="lname" type="text" class="form-control" id="lnameinput" value="<?php echo $data->last_name ?>">
+                                <input name="lname" type="text" class="form-control" id="lnameinput" value="<?php echo $data->last_name?>">
                             </div>
 
                             <div class="d-flex justify-content-center">
@@ -32,6 +32,6 @@
     </div>
 </section>
 
-<?php require APPROOT . '/views/includes/footer.php'; ?>
+<?php require APPROOT . '/views/includes/footer.php';?>
 
     

@@ -109,5 +109,3 @@ class Profile extends Controller{
         }
     }
 }
-
-?>

@@ -77,8 +77,10 @@ class Login extends Controller
                                 ];
                                 $this->view('Home/index', $data);
                             }
-                            echo 'Please wait while creating account for ' . trim($_POST['username']);
-                            header('Location: /Blog/Profile/createProfile');
+                            //header('Location: /Blog/Profile/createProfile'); //DONT USE THIS IT WILL GIVE ERROR
+                            echo '<meta http-equiv="Refresh" content=".1; url=/Blog/Profile/createProfile">';
+                            // echo 'Please wait while creating account for ' . trim($_POST['username']);
+
                         }
                     }
                 }

@@ -1,4 +1,4 @@
-<?php require APPROOT . '/views/includes/header.php';  ?>
+<?php require APPROOT . '/views/includes/header.php';?>
 
 <section class="vh-100">
     <div class="container py-5 h-100">

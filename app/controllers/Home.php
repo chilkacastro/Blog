@@ -116,7 +116,7 @@ class Home extends Controller
             $this->commentModel->createComment($data); // add comment to the database
         }
 
-     // show detail and comments of specific publication
+        // show detail and comments of specific publication
         $publication_comments = $this->commentModel->getPublicationComments($publication_id);    
         $data = [
           "publication" => $publication,
@@ -135,6 +135,4 @@ class Home extends Controller
     //     ];
     //     $this->commentModel->createComment($data); // add comment to the database
     // }
-    
-    
 }
