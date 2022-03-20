@@ -33,20 +33,49 @@ class commentModel
         return $this->db->getResultSet();
     }
 
+    public function getAuthorPublicationComment($publication_comment_id) {
+        $this->db->query("SELECT * FROM publication_comments WHERE publication_comment_id = :publication_comment_id");
+        $this->db->bind(':publication_comment_id', $publication_comment_id);
+        return $this->db->getSingle();
+    }
+
+    /*
+     * Gets all the comments of the user
+     */
+    public function getAuthorPublicationComments() {
+        $authorID = $_SESSION['user_id'];
+        $this->db->query(
+                "SELECT publication_comment.publication_comment_id, publication_comment.profile_id, publication_comment.publication_id, 
+                publication_comment.publication_comment_text, publication_comment.timestamp,
+                profile.author_id, profile.profile_id,
+                publication.publication_id, publication.publication_title
+                FROM publication_comment 
+                INNER JOIN profile 
+                INNER JOIN publication
+                WHERE profile.author_id = $authorID
+                AND publication_comment.publication_id = publication.publication_id"); 
+        return $this->db->getResultSet();
+    }
+
+    
     /*
      * Deletes a publication comment 
      */
-    public function deletePublicationComment($publication_id) {
-        $this->db->query("SELECT * FROM publication_comment WHERE publication_id = :publication_id");
+    public function deletePublicationComment($publication_comment_id) {
+        $this->db->query("DELETE FROM publication_comment WHERE publication_comment_id = :publication_comment_id");
+        $this->db->bind(':publication_comment_id', $publication_comment_id);
         
         return $this->db->execute();
     }
 
-
     /*
-     * Modify a publication comment
+     *
      */
-    public function getProfileNameComment($profile_id) {
-
+    public function editPublicationComment($data) {
+        $this->db->query("UPDATE publication_comment SET publication_comment_text = :publication_comment_text,
+            WHERE publication_comment_id=:publication_comment_id");
+            $this->db->bind(':publication_title', $data['comment_text']);
+            $this->db->bind(':publication_comment_id', $data['comment_id']);
+        return $this->db->execute();
     }
 }

@@ -43,7 +43,7 @@
             </div>
 
             <div class="col-md-8 col-lg-6 col-xl-10 container">
-                <div class="card p-3 shadow-2-strong" style="border-radius: 1rem;"">
+                <div class="card-body p-3 shadow-2-strong" style="border-radius: 1rem;"">
                     <form action="" method="post" enctype=multipart/form-data">
                         <div class="form-outline">
                             <textarea class="form-control" id="commentTextArea" name="commentTextArea" rows="4" placeholder="Write comment..." style="resize: none;"></textarea>

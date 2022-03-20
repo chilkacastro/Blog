@@ -14,8 +14,10 @@ class Profile extends Controller
     public function index()
     {
         $publications = $this->profileModel->getAuthorPublications();
+        $publication_comments = $this->commentModel->getAuthorPublicationComments();
         $data = [
-            "publications" => $publications
+            "publications" => $publications,
+            "authorComments" => $publication_comments
         ];
 
         $this->view('Profile/index', $data);
@@ -130,6 +132,32 @@ class Profile extends Controller
                 echo "Please wait we are updating your profile";
                 echo '<meta http-equiv="Refresh" content="2; url=/Blog/Profile">';
             }
+        }
+    }
+
+    public function editComment($publication_comment_id) {
+        $existing_comment = $this->commentModel->getAuthorPublicationComment($publication_comment_id);
+
+        if (!isset($_POST['editComment'])) {
+            $this->view('Profile/editComment', $existing_comment);
+
+        } else {
+            $data = [
+                "comment_text" => trim($_POST['commentText'])
+            ];
+            if ($this->profileModel->editComment($data)) {
+                echo "Please wait we are editing your comment";
+                echo '<meta http-equiv="Refresh" content="2; url=/Blog/Profile">';
+            }
+        }
+
+    }
+
+    public function deleteComment($publication_comment_id)
+    {
+        if ($this->commentModel->deletePublicationComment($publication_comment_id)) {
+            echo 'Please wait we are deleting the comment for you!';
+            echo '<meta http-equiv="Refresh" content=".2; url=/Blog/Profile">';
         }
     }
 }

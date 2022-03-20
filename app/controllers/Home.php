@@ -82,19 +82,6 @@ class Home extends Controller
         }
     }
 
-
-    /*
-	    Jiahui: I'm not sure which one is the leastest version,
-	    so I keep both of them 
-	    I think this one is the old version
-    public function details($publication_id)
-    {
-        $publication = $this->publicationModel->getPublication($publication_id);
-
-        $this->view('Home/details', $publication);
-    }
-    */
-
     public function details($publication_id)
     {
         // For the publication part

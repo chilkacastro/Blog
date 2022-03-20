@@ -63,7 +63,7 @@ class profileModel
     public function editPublication($data)
     {
         $this->db->query("UPDATE publication SET publication_title=:publication_title,
-            publication_text=:publication_text, publication_status=:publication_status  WHERE publication_id=:publication_id");
+            publication_text=:publication_text, publication_status=:publication_status WHERE publication_id=:publication_id");
         $this->db->bind(':publication_title', $data['title']);
         $this->db->bind(':publication_text', $data['text']);
         $this->db->bind(':publication_status', $data['status']);
@@ -119,17 +119,4 @@ class profileModel
         return $this->db->getSingle();
     }
 
-    public function searchByAuthor()
-    {
-    }
-
-    //In order to find interesting posts, as a reader or an author, 
-    // I need to be able to search for posts by title
-    public function searchByTitle()
-    {
-    }
-
-    public function searchByContent()
-    {
-    }
 }
