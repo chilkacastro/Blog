@@ -33,7 +33,7 @@ class publicationModel
             WHERE publication_status = 'public' 
             ORDER BY timestamp DESC");
      
-        return $this->db->getResultSet(); // controller would handle this data 
+        return $this->db->getResultSet(); 
     }
 
     public function getAllPublicationsByAuthor($name)
@@ -45,7 +45,7 @@ class publicationModel
             WHERE publication_status = 'public' AND (lower(profile.first_name) like '%$name%' OR lower(profile.middle_name) like '%$name%' OR lower(profile.last_name) like '%$name%')
             ORDER BY timestamp DESC;");
 
-        return $this->db->getResultSet(); // controller would handle this data 
+        return $this->db->getResultSet(); 
     }
 
 
@@ -58,7 +58,7 @@ class publicationModel
             WHERE publication_status = 'public' AND lower(publication.publication_title) like '%$title%'
             ORDER BY timestamp DESC;");
 
-        return $this->db->getResultSet(); // controller would handle this data 
+        return $this->db->getResultSet(); 
 
 
 
@@ -75,7 +75,7 @@ class publicationModel
             WHERE publication_status = 'public' AND lower(publication_comment.publication_comment_text) like '%$content%'
             ORDER BY timestamp DESC;");
 
-        return $this->db->getResultSet(); // controller would handle this data 
+        return $this->db->getResultSet(); 
 
     }
 

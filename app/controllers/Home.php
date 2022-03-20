@@ -23,9 +23,8 @@ class Home extends Controller
     // haven't done
     public function search()
     {
-        // echo "This is search()<br>";
+       
         if (isset($_POST['submit'])) {
-            // echo "yes clicked the search<br>";
 
             // get the keyword
             $keywords = trim($_POST['keywords']);
@@ -41,8 +40,7 @@ class Home extends Controller
             }
 
             if ($search_param != "all" && $keywords == null) { // check that the keyword is not empty for searching by author/title/content
-                // $this->index();
-
+               
                 $data = [
                     'msg' => "Please enter the keyword which you want to search!",
                 ];
@@ -51,7 +49,6 @@ class Home extends Controller
                 switch ($search_param) {
 
                     case "author":
-                        // echo "This is search By Author()<br>";
                         $publications = $this->publicationModel->getAllPublicationsByAuthor($keywords);
                         $data = [
                             "publications" => $publications
@@ -60,7 +57,6 @@ class Home extends Controller
                         $this->view('Home/index', $data);
                         break;
                     case "title":
-                        // echo "This is search By title()<br>";
                         $publications = $this->publicationModel->getAllPublicationsByTitle($keywords);
                         $data = [
                             "publications" => $publications
@@ -69,7 +65,6 @@ class Home extends Controller
                         $this->view('Home/index', $data);
                         break;
                     case "content":
-                        // echo "This is search By content()<br>";
                         $publications = $this->publicationModel->getAllPublicationsByText($keywords);
                         $data = [
                             "publications" => $publications
