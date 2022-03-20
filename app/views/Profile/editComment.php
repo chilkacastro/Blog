@@ -10,13 +10,14 @@
                             <h3 class="mb-3 d-flex justify-content-center">EDIT COMMENT</h3>
                           
                             <div class="form-outline mb-4">
-                                <label for="fnameinput">Your comment</label>
-                                <input name="lname" type="text" class="form-control" id="lnameinput" value="<?php echo $data["existing_comment"]->publication_comment_text?>">
+                                <label for="updateComment">Your comment</label>
+                                <input name="commentText" type="text" class="form-control" id="commentinput" value="<?php echo $data["existing_comment"]->publication_comment_text?>">
                             </div>
 
                             <div class="d-flex justify-content-center">
-                                <button type="submit" name='editProfile' class="btn btn-primary">Save</button>
+                                <button type="editComment" name='editComment' class="btn btn-primary">Save</button>
                             </div>
+
                         </form>
                     </div>
                 </div>
