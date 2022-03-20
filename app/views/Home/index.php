@@ -1,6 +1,6 @@
 <?php require APPROOT . '/views/includes/header.php';?>
+ <h1 class="text-center mt-5 mb-3">Welcome to the Main Page!</h1>
 <div class="col-md-9 col-md-push-1 container">
-    <h3 class="text-center mt-3">Publications</h3>
     <form action="/Blog/Home/search" method="post" id="searchForm" class="input-group container d-flex justify-content-center">
         <div class="input-group-btn search-panel">
             <select name="search_param" id="search_param" class="btn btn-dark dropdown-toggle form-select form-select-sm" aria-label=".form-select-sm example" data-toggle="dropdown">
@@ -22,8 +22,8 @@ if (!empty($data['msg'])) {
     </div>';
 }?>
 </div><!-- end col-md-9 -->
+<h3 class="text-center mt-5 mb-3">Publications</h3>
 <table class="table table-bordered container">
-    <h3 class="text-center mt-3">Publications</h3>
     <tr>
         <td>Title</td>
         <td>Date</td>
