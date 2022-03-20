@@ -31,7 +31,7 @@
                             <button type ="submit" name="commentSubmit">SUBMIT</button>
                         </div>
                 </form>
-                <div class="text-light">';
+                <div class="text-dark">';
             '<hr>
                     ';
             foreach ($data["comments"] as $comment) {
