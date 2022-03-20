@@ -104,16 +104,16 @@ class Profile extends Controller
     }
 
 
-    // public function delete($publication_id)
-    // {
-    //     $data = [
-    //         'publication_id' => $publication_id
-    //     ];
-    //     if ($this->profileModel->delete($data)) {
-    //         echo 'Please wait we are deleting the publication for you!';
-    //         echo '<meta http-equiv="Refresh" content=".2; url=/Blog/Profile">';
-    //     }
-    // }
+    public function delete($publication_id)
+    {
+        $data = [
+            'publication_id' => $publication_id
+        ];
+        if ($this->profileModel->delete($data)) {
+            echo 'Please wait we are deleting the publication for you!';
+            echo '<meta http-equiv="Refresh" content=".2; url=/Blog/Profile">';
+        }
+    }
 
     public function editProfile($author_id)
     {
@@ -144,7 +144,7 @@ class Profile extends Controller
         } else {
             $data = [
                 "comment_text" => trim($_POST['commentText']),
-                "comment_id" => $existing_comment->publication_comment_id
+                "comment_id" => $publication_comment_id
             ];
             if ($this->commentModel->editComment($data)) {
                 echo "Please wait we are editing your comment";

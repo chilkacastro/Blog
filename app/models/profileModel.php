@@ -103,11 +103,6 @@ class profileModel
     // to get one specific publication from Profile view of an author
     public function getAuthorPublication($publication_id)
     {
-        // $this->db->query("SELECT * FROM publication WHERE publication_id = :publication_id");
-        // $this->db->bind(':publication_id', $publication_id);
-        // return $this->db->getSingle();
-        
-        // Improved query
         $this->db->query(
             "SELECT publication.publication_id, publication.publication_title, publication.publication_text, publication.timestamp, publication.publication_status,
                 profile.first_name, profile.middle_name, profile.last_name
