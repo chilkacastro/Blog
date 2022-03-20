@@ -71,23 +71,15 @@ class Home extends Controller
                         break;
                     case "content":
                         echo "This is search By content()<br>";
+                        $publications = $this->publicationModel->getAllPublicationsByText($keywords);
+                        $data = [
+                            "publications" => $publications
+                        ];
+
+                        $this->view('Home/index', $data);
                         break;
                 }
             }
-
-
-            // if ($search_param == "author" && $keywords != null) {
-            //     echo "This is search By Author()<br>";
-            //     $publications = $this->publicationModel->getAllPublicationsByAuthor($keywords);
-            //     $data = [
-            //         "publications" => $publications
-            //     ];
-
-            //     $this->view('Home/index', $data);
-            // } else if ($search_param == "all" && $keywords == null) {
-            //     echo "This is display all()<br>";
-            //     $this->index();
-            // }
         } else {
             echo "not clicked search";
         }

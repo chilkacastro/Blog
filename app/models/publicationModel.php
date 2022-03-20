@@ -64,8 +64,19 @@ class publicationModel
 
     }
 
-    public function getAllPublicationsByText()
-    {   // modify parameter later if needed
+    public function getAllPublicationsByText($content)
+    {   
+        $this->db->query(
+        "SELECT profile.first_name, profile.middle_name, profile.last_name, publication.publication_title, publication.publication_text, publication.timestamp 
+            FROM publication_comment INNER JOIN publication 
+            ON publication_comment.publication_id = publication.publication_id
+            INNER JOIN profile on profile.profile_id = publication_comment.profile_id 
+
+            WHERE publication_status = 'public' AND lower(publication_comment.publication_comment_text) like '%$content%'
+            ORDER BY timestamp DESC;");
+
+        return $this->db->getResultSet(); // controller would handle this data 
+
     }
 
 }
