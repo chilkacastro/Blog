@@ -9,8 +9,9 @@
                         <h1 class="text-center">NEW PUBLICATION</h1>
                         <form action='' method='post' class="container-fluid">
                             <div class="form-group">
-                                <label for="titleinput">Title</label>
-                                <input name="title" type="text" class="form-control" id="titleinput" placeholder="Title">
+                                <label for="title">Title</label>
+                                <input name="title" type="text" class="form-control <?php echo (!empty($data['empty_title'])) ? 'is-invalid' : ''; ?>" id="titleinput" placeholder="Title">
+                                <span class="invalid-feedback"><?php echo $data['empty_title']; ?> </span>
                             </div>
 
                             <div class="form-group">

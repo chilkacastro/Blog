@@ -10,64 +10,61 @@
                     <div class="card-body">
                         <p><?php echo $data["publication"]->publication_text ?> </p>
                     </div>
+                    <?php
+                        if (!isLoggedIn()) {
+                            echo ' 
+                            <div class="card-body">
+                                <div class="text-dark container d-flex justify-content-center mt-1">
+                                        <a class="nav-link" href="/Blog/Login/"><i class="fa-regular fa-comment"></i> Add a comment </a></li>
+                            </div>
+                            
+                            <div class="text-dark">';
+                            foreach ($data["comments"] as $comment) {
+                                echo "<hr>";
+                                echo $comment->first_name . ' ' . $comment->middle_name . ' ' . $comment->last_name . ' ' . date(" m/d/Y H:i:s", strtotime($comment->timestamp));
+                                echo "<br>$comment->publication_comment_text<br>";
+                            
+                            
+                            };
+                            '</div>';
+                        }
+                    ?>
                 </div>
             </div>
         </div>
-        <!-- Comment icon appears only when author is not signed in -->
-        <?php
-        if (!isLoggedIn()) {
-            echo ' 
-            <div class="card-body container" style="border-radius: 1rem;"">
-                <div class="my-3 py-1 text-dark">
-                    <div class="container d-flex justify-content-center mt-1">
-                        <a class="nav-link" href="/Blog/Login/"><i class="fa-regular fa-comment"></i> Add a comment </a></li>
-                    </div>
-                </div>
-
-            <div class="text-light">';
-            '<hr>';
-            foreach ($data["comments"] as $comment) {
-                echo $comment->first_name . ' ' . $comment->middle_name . ' ' . $comment->last_name . ' ' . date(" m/d/Y H:i:s", strtotime($comment->timestamp));
-                echo "<br>$comment->publication_comment_text<br>";
-                echo "<hr>";
-            }    
-            '</div>';
-        }
-
-        ?>
+        <!-- Add a comment -->
         <?php
         if (isLoggedIn()) {
-            echo '
-                <div class="my-3 py-1 text-dark">
-                    <div class="text-center">
-                        <label class="form-label text-light" for="textAreaExample">ADD A COMMENT</label>
-                    </div>
-
-                    <div class="col-md-8 col-lg-6 col-xl-10 container">
-                        <div class="card p-3 shadow-2-strong" style="border-radius: 1rem;"">
-                            <form action="" method="post" enctype=multipart/form-data">
-                                <div class="form-outline">
-                                    <textarea class="form-control" id="commentTextArea" name="commentTextArea" rows="4" placeholder="Write comment..." style="resize: none;"></textarea>
-                                </div>
-
-                                <div class="d-flex justify-content-end mt-3 mr-4">
-                                    <button type ="submit" name="commentSubmit">SUBMIT</button>
-                                </div>
-                            </form>
-
-                    <div class="text-dark">';
-                '<hr>';
+            echo ' 
+        <div class="my-3 py-1 text-dark">
+            <div class="text-center">
+                    <label class="form-label text-dark" for="textAreaExample">ADD A COMMENT</label>
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-10 container">
+                    <div class="card p-3 shadow-2-strong" style="border-radius: 1rem;"">
+                        <form action="" method="post" enctype=multipart/form-data">
+                        <div class="form-outline">
+                            <textarea class="form-control" id="commentTextArea" name="commentTextArea" rows="4" placeholder="Write comment..." style="resize: none;"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-end mt-3 mr-4">
+                            <button type ="submit" name="commentSubmit">SUBMIT</button>
+                        </div>
+                </form>
+                <div class="text-dark">';
+            '<hr>
+                    ';
             foreach ($data["comments"] as $comment) {
+                echo "<hr>";
                 echo $comment->first_name . ' ' . $comment->middle_name . ' ' . $comment->last_name . ' ' . date(" m/d/Y H:i:s", strtotime($comment->timestamp));
                 echo "<br>$comment->publication_comment_text<br>";
-                echo "<hr>";
+               
+               
             };
-            '</div>
 
+            '</div>
         </div>
-</div>';
+    </div>';
         }
         ?>
 </section>
-
 <?php require APPROOT . '/views/includes/footer.php'; ?>
