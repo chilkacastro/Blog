@@ -9,11 +9,12 @@
                         <h1 class="text-center">EDIT PUBLICATION</h1>
                         <form action='' method='post'>
                             <div class="form-group">
-                                <label for="titleinput"></label>
+                                <label for="titleinput">Title</label>
                                 <input name="title" type="text" class="form-control" id="titleinput" value="<?php echo $data->publication_title ?>"> </div>
+
                                 <div class="form-group">
-                                    <label for="textinput"></label>
-                                    <input name="text" type="text" class="form-control" id="textinput" value="<?php echo $data->publication_text ?>"></input>
+                                <label for="textinput">Content</label>
+                                <textarea class="form-control" id="textinput" rows="5" style="resize: none;"><?php echo $data->publication_text ?></textarea>
                                 </div>
 
                                 <div class="form-group">
