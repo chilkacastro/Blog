@@ -41,7 +41,7 @@
 
 <table class="container table table-bordered">  
     <tr>
-        <td>Comment ID</td>
+        <!-- <td>Comment ID</td> -->
         <td>Comment Text</td>
         <td>Publication Title</td>
         <td>Date</td>
@@ -50,10 +50,10 @@
 <h3 class="text-center mt-3">Comments</h3>
 <?php
        foreach ($data["authorComments"] as $comment) {
-            echo
-            "<td>
-                <a href=''>$comment->publication_comment_id</a>
-            </td>";
+            // echo
+            // "<td>
+            //     <a href=''>$comment->publication_comment_id</a>
+            // </td>";
              echo
             "<td>
                 <a href=''>$comment->publication_comment_text</a>

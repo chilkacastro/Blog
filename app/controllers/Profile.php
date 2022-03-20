@@ -104,16 +104,16 @@ class Profile extends Controller
     }
 
 
-    public function delete($publication_id)
-    {
-        $data = [
-            'publication_id' => $publication_id
-        ];
-        if ($this->profileModel->delete($data)) {
-            echo 'Please wait we are deleting the user for you!';
-            echo '<meta http-equiv="Refresh" content=".2; url=/Blog/Profile">';
-        }
-    }
+    // public function delete($publication_id)
+    // {
+    //     $data = [
+    //         'publication_id' => $publication_id
+    //     ];
+    //     if ($this->profileModel->delete($data)) {
+    //         echo 'Please wait we are deleting the publication for you!';
+    //         echo '<meta http-equiv="Refresh" content=".2; url=/Blog/Profile">';
+    //     }
+    // }
 
     public function editProfile($author_id)
     {
