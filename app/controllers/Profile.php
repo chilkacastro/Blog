@@ -58,26 +58,29 @@ class Profile extends Controller
         } else {
             // $filename= $this->imageUpload();
             // $status = ['status' => trim($_POST['status'])];
-            if (isset($title) | isset($text) | isset($status)) {
+                $status = '';
+                if (!isset($_POST['status']))
+                    $status = '';
+                else
+                    $status = trim($_POST['status']);
+
                 $data = [
-                    'title' => trim($_POST['title']),
-                    'text' => trim($_POST['text']),
-                    // 'status' => $status->'status',
-                    'status' => trim($_POST['status']),
-                    'empty_title' => '',
-                    'empty_text' => '',
-                    'empty_status' => ''
-                ];
+                        'title' => trim($_POST['title']),
+                        'text' => trim($_POST['text']),
+                        $status,
+                        'empty_title' => '',
+                        'empty_text' => '',
+                        'empty_status' => ''
+                    ];
 
                 if ($this->validateData($data)) {
                     if ($this->profileModel->createPublication($data)) {
-                        echo 'Please wait we are uploading the publication for you!';
                         header('Location: /Blog/Profile/index');
+                        echo 'Please wait we are uploading the publication for you!';
                         $this->view('Profile/index', $data);
-
                     }
                 }  
-            }
+            
             // $data = [
             //     'title' => trim($_POST['title']),
             //     'text' => trim($_POST['text']),
@@ -106,6 +109,12 @@ class Profile extends Controller
         }
         if (empty($data['status'])) {
             $data['empty_status'] = 'Please choose a status for your post';
+        }
+        if (empty($data['empty_title']) && empty($data['empty_content']) && empty($data['empty_status'])) {
+            return true;
+        }
+        else {
+            $this->view('Profile/createPublication', $data);
         }
     }
 

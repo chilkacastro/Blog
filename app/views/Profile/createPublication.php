@@ -17,15 +17,18 @@
                             <div class="form-group">
                                 <label for="textinput">Content</label>
                                 <textarea class="form-control" id="textinput" name= "text" rows="5" placeholder="Enter text here..." style="resize: none;"></textarea>
+                                <span class="invalid-feedback"><?php echo $data['empty_content']; ?> </span>
                             </div>
 
                             <div class="form-group">
                                 <label for="status" class="pr-2">Status:</label>
-                                <input type="radio" value="public" id="public" name="status">
+                                <input type="radio" name="status" value="public" id="public">
                                 <label for="public" class="pr-2">Public</label>
-                                <input type="radio" id="private" value="private" name="status">
+                                <input type="radio" name="status" id="private" value="private">
                                 <label for="private">Private</label>
+                                <span class="invalid-feedback"><?php echo $data['empty_status']; ?> </span>
                             </div>
+                                                    
                             <div class="d-flex justify-content-center">
                                 <button type="submit" name="upload" class="btn-btn-primary">Upload</button>
                             </div>
