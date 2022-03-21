@@ -75,6 +75,7 @@ class profileModel
                 FROM profile INNER JOIN publication 
                 ON publication.profile_id = profile.profile_id
                 WHERE author_id = (SELECT author_id FROM author WHERE username = '$username')"
+           
         );
         return $this->db->getResultSet();
     }

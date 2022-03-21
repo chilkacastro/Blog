@@ -73,6 +73,8 @@ class Profile extends Controller
                     if ($this->profileModel->createPublication($data)) {
                         echo 'Please wait we are uploading the publication for you!';
                         header('Location: /Blog/Profile/index');
+                        $this->view('Profile/index', $data);
+
                     }
                 }  
             }

@@ -45,15 +45,24 @@ class commentModel
     public function getAuthorPublicationComments() {
         $authorID = $_SESSION['user_id'];
         $this->db->query(
+                // "SELECT publication_comment.publication_comment_id, publication_comment.profile_id, publication_comment.publication_id, 
+                // publication_comment.publication_comment_text, publication_comment.timestamp,
+                // profile.author_id, profile.profile_id,
+                // publication.publication_id, publication.publication_title
+                // FROM publication_comment 
+                // INNER JOIN profile 
+                // INNER JOIN publication
+                // WHERE profile.author_id = $authorID
+                // AND publication_comment.publication_id = publication.publication_id"); 
                 "SELECT publication_comment.publication_comment_id, publication_comment.profile_id, publication_comment.publication_id, 
                 publication_comment.publication_comment_text, publication_comment.timestamp,
                 profile.author_id, profile.profile_id,
                 publication.publication_id, publication.publication_title
                 FROM publication_comment 
-                INNER JOIN profile 
-                INNER JOIN publication
-                WHERE profile.author_id = $authorID
-                AND publication_comment.publication_id = publication.publication_id"); 
+                INNER JOIN profile ON publication_comment.profile_id = profile.profile_id
+                JOIN publication ON publication.publication_id = publication_comment.publication_id
+                WHERE profile.author_id = '$authorID'"
+        );
         return $this->db->getResultSet();
     }
 
