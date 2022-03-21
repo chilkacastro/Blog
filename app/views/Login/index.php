@@ -1,5 +1,4 @@
 <?php require APPROOT . '/views/includes/header.php'; ?>
-
 <section class="vh-100">
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-10">
@@ -13,24 +12,24 @@
                             <div class="form-outline mb-4">
                                 <label for="username">Username</label>
                                 <input type="text" class="form-control
-                                <?php 
-                                    echo (!empty($data['username_error'])) ? 'is-invalid' : ''; 
+                                <?php
+                                echo (!empty($data['username_error'])) ? 'is-invalid' : '';
                                 ?>" id="username" name="username" placeholder="Username">
                                 <span class="invalid-feedback">
-                                    <?php echo $data['username_error']; ?> 
+                                    <?php echo $data['username_error']; ?>
                                 </span>
                             </div>
 
                             <div class="form-outline mb-4">
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control 
-                                <?php 
-                                    echo (!empty($data['password_error'])) ? 'is-invalid' : ''; 
+                                <?php
+                                echo (!empty($data['password_error'])) ? 'is-invalid' : '';
                                 ?>" id="password" name="password" placeholder="Password">
                                 <span class="invalid-feedback">
-                                    <?php 
-                                        echo $data['password_error']; 
-                                    ?> 
+                                    <?php
+                                    echo $data['password_error'];
+                                    ?>
                                 </span>
                             </div>
 
@@ -56,5 +55,4 @@
         </div>
     </div>
 </section>
-
 <?php require APPROOT . '/views/includes/footer.php'; ?>

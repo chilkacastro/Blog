@@ -32,16 +32,13 @@
                         </div>
                 </form>
                 <div class="text-dark">';
-            '<hr>
-                    ';
+            '<hr>';
             foreach ($data["comments"] as $comment) {
                 echo "<hr>";
                 echo $comment->first_name . ' ' . $comment->middle_name . ' ' . $comment->last_name . ' ' . date(" m/d/Y H:i:s", strtotime($comment->timestamp));
                 echo "<br>$comment->publication_comment_text<br>";
                
-               
             };
-
             '</div>
         </div>
     </div>';

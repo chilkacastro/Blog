@@ -1,36 +1,24 @@
 <?php
-
-/*
-        This is our core app file. 
-        It is responsible for the routing of our application 
-        Programmatically mapping of URLs to controllers and methods
-
-        URL pattern:- /controller/method/params
-    */
-
 class App
 {
-
-    protected $currentController = 'Home';  // Home is the default controller until it is changed
-    protected $currentMethod = 'index';     // default method if no method is given
+    protected $currentController = 'Home';  
+    protected $currentMethod = 'index';  
     protected $params = [];
 
-    // default constructor of the App
-
+    /*
+     * Default constructor 
+     */
     public function __construct()
     {
-        $url = $this->parseURL(); // calls the parseURL() method which will return an array -> $url here is a local variable
+        $url = $this->parseURL(); 
 
-        // CONTROLLER PART: Checks if controller name exists // $url[0] is dedicated for the controller
         if (file_exists('../app/controllers/' . $url[0] . '.php')) {
-            $this->currentController = $url[0];          // if it does exist then change the currentController
-            unset($url[0]);                              // unset the url[0] because you already set the currentController // it has served its purpose so its now time to clean it up for later usage
+            $this->currentController = $url[0];         
+            unset($url[0]);                        
         }
 
-        // Require the controller     // if this is not done then it will not work
         require_once '../app/controllers/' . $this->currentController . '.php';
 
-        // Instantiate the controller class   // after require_once then create an object of the currentController
         $this->currentController = new $this->currentController;
 
         // METHOD PART: Check for the method name in the url | url[1]
@@ -49,8 +37,10 @@ class App
         call_user_func_array([$this->currentController, $this->currentMethod], $this->params);  // call_user_func_array is ([class and method], array of params)
     }
 
-    // method to parse the url which will be used by the constructor
-    public function parseURL()   // returns an array
+    /* 
+     * Parse the url which will be used by the constructor
+     */
+    public function parseURL() 
     {
         if (isset($_GET['url'])) {
             $url = rtrim($_GET['url'], '/');
