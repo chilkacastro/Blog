@@ -16,12 +16,13 @@
 
                             <div class="form-group">
                                 <label for="textinput">Content</label>
-                                <textarea class="form-control" id="textinput" name= "text" rows="5" placeholder="Enter text here..." style="resize: none;"></textarea>
+                                <textarea class="form-control <?php echo (!empty($data['empty_content'])) ? 'is-invalid' : ''; ?>" id="textinput" name= "text" rows="5" placeholder="Enter text here..." style="resize: none;"></textarea>
                                 <span class="invalid-feedback"><?php echo $data['empty_content']; ?> </span>
                             </div>
 
                             <div class="form-group">
-                                <label for="status" class="pr-2">Status:</label>
+                                
+                                <label for="status " class="pr-2">Status:</label>
                                 <input type="radio" name="status" value="public" id="public">
                                 <label for="public" class="pr-2">Public</label>
                                 <input type="radio" name="status" id="private" value="private">
