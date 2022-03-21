@@ -11,14 +11,16 @@
                         <p><?php echo $data["publication"]->publication_text ?> </p>
                     </div>
                     <?php
+                        // Add a comment icon when not logged in
                         if (!isLoggedIn()) {
                             echo ' 
                             <div class="card-body">
                                 <div class="text-dark container d-flex justify-content-center mt-1">
-                                        <a class="nav-link" href="/Blog/Login/"><i class="fa-regular fa-comment"></i> Add a comment </a></li>
+                                    <a class="nav-link" href="/Blog/Login/"><i class="fa-regular fa-comment"></i> Add a comment </a></li>
                             </div>
                             
                             <div class="text-dark">';
+                            // displays all the comments
                             foreach ($data["comments"] as $comment) {
                                 echo "<hr>";
                                 echo $comment->first_name . ' ' . $comment->middle_name . ' ' . $comment->last_name . ' ' . date(" m/d/Y H:i:s", strtotime($comment->timestamp));
@@ -31,33 +33,33 @@
                 </div>
             </div>
         </div>
-        <!-- Add a comment -->
+
+        <!-- Add a comment when logged in -->
         <?php
         if (isLoggedIn()) {
             echo ' 
-        <div class="my-3 py-1 text-dark">
-            <div class="text-center">
+            <div class="my-3 py-1 text-dark">
+                <div class="text-center">
                     <label class="form-label text-dark" for="textAreaExample">ADD A COMMENT</label>
-            </div>
+                </div>
             <div class="col-md-8 col-lg-6 col-xl-10 container">
-                    <div class="card p-3 shadow-2-strong" style="border-radius: 1rem;"">
-                        <form action="" method="post" enctype=multipart/form-data">
+                <div class="card p-3 shadow-2-strong" style="border-radius: 1rem;"">
+                    <form action="" method="post" enctype=multipart/form-data">
                         <div class="form-outline">
                             <textarea class="form-control" id="commentTextArea" name="commentTextArea" rows="4" placeholder="Write comment..." style="resize: none;"></textarea>
                         </div>
+
                         <div class="d-flex justify-content-end mt-3 mr-4">
                             <button type ="submit" name="commentSubmit">SUBMIT</button>
                         </div>
-                </form>
+                    </form>
+
                 <div class="text-dark">';
-            '<hr>
-                    ';
+            '<hr>';
             foreach ($data["comments"] as $comment) {
                 echo "<hr>";
                 echo $comment->first_name . ' ' . $comment->middle_name . ' ' . $comment->last_name . ' ' . date(" m/d/Y H:i:s", strtotime($comment->timestamp));
                 echo "<br>$comment->publication_comment_text<br>";
-               
-               
             };
 
             '</div>

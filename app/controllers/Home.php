@@ -1,6 +1,9 @@
 <?php
 class Home extends Controller
 {
+    /*
+     * Default constructor
+     */
     public function __construct()
     {
         $this->publicationModel = $this->model('publicationModel');
@@ -8,8 +11,8 @@ class Home extends Controller
     }
 
     /*
-        List all public publications
-    */
+     *   List all public publications in the home/main page
+     */
     public function index()
     {
         $publications = $this->publicationModel->getAllPublications();
@@ -20,7 +23,9 @@ class Home extends Controller
         $this->view('Home/index', $data);
     }
 
-    // haven't done
+    /*
+     * Search depending on the category chosen: All, Title, Author, Content
+     */
     public function search()
     {
        
@@ -76,7 +81,10 @@ class Home extends Controller
             }
         }
     }
-
+    
+    /*
+    *  Shows the details of the chosen publication
+    */
     public function details($publication_id)
     {
         // For the publication part

@@ -28,26 +28,27 @@
                     <?php
                     if (isLoggedIn()) {
                         echo '<div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-    <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle disabled" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Profile
-        </a>
-        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li><a class="dropdown-item" href="/Blog/Profile">View Profile</a></li>
-            <li><a class="dropdown-item" name="editProfile" href="/Blog/Profile/editProfile/' . $_SESSION['user_id'] . '">Edit Profile</a></li>
-            <li><a class="dropdown-item" href="/Blog/Profile/createPublication">Create a publication</a></li>
-        </ul>
-        </li>
-    </ul>
-    </div>';
-                    } else {
+                            <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle disabled" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Profile
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><a class="dropdown-item" href="/Blog/Profile">View Profile</a></li>
+                                <li><a class="dropdown-item" name="editProfile" href="/Blog/Profile/editProfile/' . $_SESSION['user_id'] . '">Edit Profile</a></li>
+                                <li><a class="dropdown-item" href="/Blog/Profile/createPublication">Create a publication</a></li>
+                            </ul>
+                            </li>
+                            </ul>
+                            </div>';
+                    } 
+                    else {
                         echo '<li class="nav-item">
-    <a class="nav-link" href="/Blog/Profile">Profile</a>
-    </li>';
+                        <a class="nav-link" href="/Blog/Profile">Profile</a>
+                        </li>';
                     }
                     ?>
-                </ul>
+                    </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <?php
                     if (isLoggedIn()) {
@@ -86,11 +87,10 @@
                                     <button type="submit" name='register' class="btn btn-primary col-3 mt-3">Save</button>
                                     <div>
                             </form>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <?php require APPROOT . '/views/includes/footer.php'; ?>
+<?php require APPROOT . '/views/includes/footer.php'; ?>

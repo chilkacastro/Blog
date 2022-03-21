@@ -25,39 +25,40 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/Blog/Home">Home</a>
                     </li>
-<?php
-if (isLoggedIn()) {
-    echo '<div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-    <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Profile
-        </a>
-        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-           <li><a class="dropdown-item" href="/Blog/Profile">View Profile</a></li>
-            <li><a class="dropdown-item" name="editProfile" href="/Blog/Profile/editProfile/' . $_SESSION['user_id'] . '">Edit Profile</a></li>
-            <li><a class="dropdown-item" href="/Blog/Profile/createPublication">Create a publication</a></li>
-        </ul>
-        </li>
-    </ul>
-    </div>';
-}
-else {
-    echo '<li class="nav-item">
-    <a class="nav-link" href="/Blog/Profile">Profile</a>
-    </li>';
-}
-?>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-<?php
-if (isLoggedIn()) {
-echo '<li class="nav-item"><a class="nav-link" href="/Blog/Login/logout"><i class="fa-solid fa-sign-out"></i> Logout  ' . $_SESSION['user_username'] . '</a></li>';
-} else {
-echo '<li class="nav-item"><a class="nav-link" href="/Blog/Login/create"><i class="fa-solid fa-user-plus"></i> Sign Up</a></li>
-<li class="nav-item"><a class="nav-link" href="/Blog/Login"><i class="fa-solid fa-right-to-bracket"></i> Login</a></li>';
-}
-?>
+                    <?php
+                    if (isLoggedIn()) {
+                        echo 
+                        '<div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
+                                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="/Blog/Profile">View Profile</a></li>
+                                    <li><a class="dropdown-item" name="editProfile" href="/Blog/Profile/editProfile/' . $_SESSION['user_id'] . '">Edit Profile</a></li>
+                                    <li><a class="dropdown-item" href="/Blog/Profile/createPublication">Create a publication</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+            </div>';
+                    } 
+                    else {
+                        echo 
+                        '<li class="nav-item">
+                         <a class="nav-link" href="/Blog/Profile">Profile</a>
+                        </li>';
+                    }
+                    ?>
+                    </ul>
+                    
+                    <ul class="nav navbar-nav navbar-right">
+                    <?php
+                    if (isLoggedIn()) {
+                        echo '<li class="nav-item"><a class="nav-link" href="/Blog/Login/logout"><i class="fa-solid fa-sign-out"></i> Logout  ' . $_SESSION['user_username'] . '</a></li>';
+                    } else {
+                        echo '<li class="nav-item"><a class="nav-link" href="/Blog/Login/create"><i class="fa-solid fa-user-plus"></i> Sign Up</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Blog/Login"><i class="fa-solid fa-right-to-bracket"></i> Login</a></li>';
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
