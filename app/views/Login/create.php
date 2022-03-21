@@ -8,7 +8,6 @@
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-2">Create an account</h2>
 
-
               <form class="px-4 py-3" method="post" action="">
                 <div class="form-group">
                   <label for="username">Username</label>
@@ -40,16 +39,13 @@
                 <p class="text-center">Already registered? <a href="/Blog/Login/"> Login</a> </p>
 
                 <?php
-
                 if (!empty($data['msg'])) {
                   echo '<div class="alert alert-danger" role="alert">' .
                     $data['msg'] . '
                   </div>';
                 }
-
                 ?>
               </form>
-
             </div>
           </div>
         </div>

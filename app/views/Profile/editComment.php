@@ -1,5 +1,4 @@
 <?php require APPROOT . '/views/includes/header.php'; ?>
-
 <section class="vh-100">
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-10">
@@ -25,7 +24,6 @@
         </div>
     </div>
 </section>
-
 <?php require APPROOT . '/views/includes/footer.php';?>
 
     
