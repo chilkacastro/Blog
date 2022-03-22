@@ -28,7 +28,7 @@ class Home extends Controller
      */
     public function search()
     {
-       
+
         if (isset($_POST['submit'])) {
 
             // get the keyword
@@ -45,7 +45,7 @@ class Home extends Controller
             }
 
             if ($search_param != "all" && $keywords == null) { // check that the keyword is not empty for searching by author/title/content
-               
+
                 $data = [
                     'msg' => "Please enter the keyword which you want to search!",
                 ];
@@ -81,7 +81,7 @@ class Home extends Controller
             }
         }
     }
-    
+
     /*
     *  Shows the details of the chosen publication
     */
@@ -96,13 +96,13 @@ class Home extends Controller
                 "comment" => trim($_POST['commentTextArea']),
                 "pub_id" => $publication_id,
             ];
-            
+
             $this->commentModel->createComment($data);
         }
 
         // show detail and comments of specific publication
         $publication_comments = $this->commentModel->getPublicationComments($publication_id);
-        $profile = $this->commentModel->getCommentProfile(); 
+        $profile = $this->commentModel->getCommentProfile();
         $data = [
             "publication" => $publication,
             "comments" => $publication_comments,
@@ -111,12 +111,12 @@ class Home extends Controller
         $this->view('Home/details',  $data);
     }
 
-    
-    public function deleteComment($publication_comment_id)
+    public function deleteComment($publication_comment_id, $publication_id)
     {
         if ($this->commentModel->deletePublicationComment($publication_comment_id)) {
+
             echo 'Please wait we are deleting the comment for you!';
-            echo '<meta http-equiv="Refresh" content=".2; url=/Blog/Home">';
+            header("Location:/Blog/Home/details/$publication_id");
         }
     }
 }

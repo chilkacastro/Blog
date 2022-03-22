@@ -70,10 +70,9 @@
                 echo $comment->first_name . ' ' . $comment->middle_name . ' ' .
                     $comment->last_name . ' ' . date(" m/d/Y H:i:s", strtotime($comment->timestamp));
                 if ($comment->profile_id == ($data['currentUser'])->profile_id) {
-                    echo '<a href="/Blog/Home/editComment/' . $comment->publication_comment_id . '"><button class>Edit</button></a>';
-                    echo '<a href="/Blog/Home/deleteComment/' . $comment->publication_comment_id . '"><button>Delete</button></a>';
+                    echo '<a href="/Blog/Profile/editComment/' . $comment->publication_comment_id . '"><button class>Edit</button></a>';
+                    echo '<a href="/Blog/Home/deleteComment/' . $comment->publication_comment_id . ' /'. $comment->publication_id .' "><button>Delete</button></a>';
                 }
-
                 echo "<br>$comment->publication_comment_text";
             }
             '</div>
@@ -82,5 +81,5 @@
         }
         ?>
 </section>
-<div></div>;
+
 <?php require APPROOT . '/views/includes/footer.php'; ?>

@@ -107,4 +107,10 @@ class commentModel
         }
         return $this->db->getSingle();
     }
+
+    public function getPublication($publication_comment_id) {
+        $this->db->query("SELECT * FROM publication_comment WHERE publication_comment_id = :publication_comment_id");
+        $this->db->bind(':publication_comment_id', $publication_comment_id);
+        return $this->db->getSingle();
+    }
 }

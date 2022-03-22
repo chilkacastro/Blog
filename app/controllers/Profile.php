@@ -214,11 +214,12 @@ class Profile extends Controller
 
     }
 
-    public function deleteComment($publication_comment_id)
+     public function deleteComment($publication_comment_id, $publication_id)
     {
         if ($this->commentModel->deletePublicationComment($publication_comment_id)) {
+
             echo 'Please wait we are deleting the comment for you!';
-            echo '<meta http-equiv="Refresh" content=".2; url=/Blog/Profile">';
+            header("Location:/Blog/Profile/details/$publication_id");
         }
     }
 }
