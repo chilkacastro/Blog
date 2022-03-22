@@ -1,12 +1,20 @@
 <?php require APPROOT . '/views/includes/header.php'; ?>
-
+<script>
+function validateForm() {
+  let comment = document.forms["editComment"]["commentText"].value;
+  if (comment == "") {
+    alert("Comment can't be empty");
+    return false;
+  }
+}
+</script>
 <section class="vh-100">
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-10">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                 <div class="card shadow-2-strong" style="border-radius: 1rem;">
                     <div class="card-body p-5">
-                         <form class="container-fluid" action='' method='post' enctype="multipart/form-data">
+                         <form class="container-fluid" name="editComment" action='' onsubmit="return validateForm()" method='post' enctype="multipart/form-data">
                             <h3 class="mb-3 d-flex justify-content-center">EDIT COMMENT</h3>
                             
                             <div class="form-outline mb-4">
