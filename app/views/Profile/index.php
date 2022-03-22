@@ -1,5 +1,5 @@
 <?php require APPROOT . '/views/includes/header.php'; ?>
-<h1 class="mt-3 ml-3">Welcome, <?php echo $data['profile']->first_name . ' ' .  $data['profile']->middle_name . ' ' . $data['profile']->last_name?> </h1>
+<h1 style="margin-left: 20px;" class="mt-3 ml-3">Welcome, <?php echo $data['profile']->first_name . ' ' .  $data['profile']->middle_name . ' ' . $data['profile']->last_name?> </h1>
 <hr>
 <h3 class="text-center mt-3">Publications</h3>
 <table class="container table table-bordered">
