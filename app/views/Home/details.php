@@ -13,24 +13,23 @@
                         <p><?php echo $data["publication"]->publication_text ?> </p>
                     </div>
                     <?php
-                        // Add a comment icon when not logged in
-                        if (!isLoggedIn()) {
-                            echo ' 
+                    // Add a comment icon when not logged in
+                    if (!isLoggedIn()) {
+                        echo ' 
                             <div class="card-body">
                                 <div class="text-dark container d-flex justify-content-center mt-1">
                                     <a class="nav-link" href="/Blog/Login/"><i class="fa-regular fa-comment"></i> Add a comment </a></li>
                             </div>
                             
                             <div class="text-dark">';
-                            // displays all the comments
-                            foreach ($data["comments"] as $comment) {
-                                echo "<hr>";
-                                echo $comment->first_name . ' ' . $comment->middle_name . ' ' . $comment->last_name . ' ' . date(" m/d/Y H:i:s", strtotime($comment->timestamp));
-                                echo "<br>$comment->publication_comment_text<br>";
-                                       
-                            };
-                            '</div>';
-                        }
+                        // displays all the comments
+                        foreach ($data["comments"] as $comment) {
+                            echo "<hr>";
+                            echo $comment->first_name . ' ' . $comment->middle_name . ' ' . $comment->last_name . ' ' . date(" m/d/Y H:i:s", strtotime($comment->timestamp));
+                            echo "<br>$comment->publication_comment_text<br>";
+                        };
+                        '</div>';
+                    }
                     ?>
                 </div>
             </div>
@@ -70,6 +69,11 @@
                 echo "<hr>";
                 echo $comment->first_name . ' ' . $comment->middle_name . ' ' . $comment->last_name . ' ' . date(" m/d/Y H:i:s", strtotime($comment->timestamp));
                 echo "<br>$comment->publication_comment_text<br>";
+
+                    if ($comment->profile_id == ($data["currentUser"])->profile_id) {
+                        echo '<a class=""mr-5" href="/Blog/Profile/editComment/' . $comment->publication_comment_id . '"><button>Edit</button></a>';
+                        echo '<a href="/Blog/Profile/deleteComment/' . $comment->publication_comment_id . '"><button>Delete</button></a> ';
+                    }
             };
 
             '</div>

@@ -102,9 +102,11 @@ class Home extends Controller
 
         // show detail and comments of specific publication
         $publication_comments = $this->commentModel->getPublicationComments($publication_id);
+        $profile = $this->commentModel->getCommentProfile(); 
         $data = [
             "publication" => $publication,
             "comments" => $publication_comments,
+            "currentUser" => $profile
         ];
         $this->view('Home/details',  $data);
     }

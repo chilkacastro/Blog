@@ -37,12 +37,17 @@
                 echo "<hr>";
                 echo $comment->first_name . ' ' . $comment->middle_name . ' ' . $comment->last_name . ' ' . date(" m/d/Y H:i:s", strtotime($comment->timestamp));
                 echo "<br>$comment->publication_comment_text<br>";
-               
-            };
-            '</div>
+                
+                if ($comment->profile_id == $data["currentUser"]->profile_id) {
+                    echo '<a class="mr-5" href="/Blog/Profile/editComment/'.$comment->publication_comment_id.'"><button>Edit</button></a>';
+                    echo '<a href="/Blog/Profile/deleteComment/'.$comment->publication_comment_id.'"><button>Delete</button></a> ' ;
+                }
+            }
+        };
+    
+        '</div>
         </div>
     </div>';
-        }
         ?>
 </section>
 <?php require APPROOT . '/views/includes/footer.php'; ?>

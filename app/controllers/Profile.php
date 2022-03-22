@@ -146,16 +146,18 @@ class Profile extends Controller
         if (isset($_POST['commentSubmit'])) {
             $data = [
                 "comment" => trim($_POST['commentTextArea']),
-                "pub_id" => $publication_id
+                "pub_id" => $publication_id,
             ];
             $this->commentModel->createComment($data); // add comment to the database
         }
 
         // show detail and comments of specific publication
         $publication_comments = $this->commentModel->getPublicationComments($publication_id);
+        $profile = $this->commentModel->getCommentProfile();  // used to compare with the publication_comments profile_id and the profile_id of the signed in author
         $data = [
             "publication" => $publication,
-            "comments" => $publication_comments
+            "comments" => $publication_comments,
+            "currentUser" => $profile
         ];
         $this->view('Profile/details',  $data);
     }
@@ -194,14 +196,15 @@ class Profile extends Controller
 
     public function editComment($publication_comment_id) {
         $existing_comment = $this->commentModel->getAuthorPublicationComment($publication_comment_id);
-
+        
         if (!isset($_POST['editComment'])) {
             $this->view('Profile/editComment', $existing_comment);
 
         } else {
             $data = [
                 "comment_text" => trim($_POST['commentText']),
-                "comment_id" => $publication_comment_id
+                "comment_id" => $publication_comment_id,
+
             ];
             if ($this->commentModel->editComment($data)) {
                 echo "Please wait we are editing your comment";

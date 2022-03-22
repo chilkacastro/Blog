@@ -94,4 +94,15 @@ class commentModel
         $this->db->bind(':publication_comment_id', $data['comment_id']);
         return $this->db->execute();
     }
+
+    /*
+     * Gets the author/user profile information from the database
+     */
+    public function getCommentProfile()
+    {
+        $authorID = $_SESSION['user_id'];
+        $this->db->query("SELECT * FROM profile WHERE author_id = :author_id");
+        $this->db->bind(':author_id', $authorID);
+        return $this->db->getSingle();
+    }
 }
