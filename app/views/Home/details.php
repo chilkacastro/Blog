@@ -67,18 +67,47 @@
             '<hr>';
             foreach ($data["comments"] as $comment) {
                 echo "<hr>";
+                '<div class="form-outline mb-4">';
                 echo $comment->first_name . ' ' . $comment->middle_name . ' ' .
                     $comment->last_name . ' ' . date(" m/d/Y H:i:s", strtotime($comment->timestamp));
-                if ($comment->profile_id == ($data['currentUser'])->profile_id) {
-                    echo '<a href="/Blog/Profile/editComment/' . $comment->publication_comment_id . '"><button class>Edit</button></a>';
-                    echo '<a href="/Blog/Home/deleteComment/' . $comment->publication_comment_id . ' /'. $comment->publication_id .' "><button>Delete</button></a>';
+                if ($comment->profile_id == ($data['currentUser'])->profile_id) {    
+                    echo '<a class="mr-5" href="/Blog/Profile/editComment/' . $comment->publication_comment_id . '"><button>Edit</button></a>';
+                    echo '<a href="/Blog/Profile/deleteComment/' . $comment->publication_comment_id  . ' /'. $comment->publication_id .' ""><button>Delete</button></a> ';
+                    echo '
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>';
                 }
-                echo "<br>$comment->publication_comment_text";
+                echo "<br>$comment->publication_comment_text<br>";
+                }
             }
             '</div>
         </div>
     </div>';
-        }
+        
         ?>
 </section>
 <?php require APPROOT . '/views/includes/footer.php'; ?>
+
+
