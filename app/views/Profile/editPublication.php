@@ -1,5 +1,18 @@
 <?php require APPROOT . '/views/includes/header.php'; ?>
-
+<script>
+function validateForm() {
+  let title = document.forms["editPublication"]["title"].value;
+  let text = document.forms["editPublication"]["text"].value;
+  if (title == "") {
+    alert("Title must be filled out");
+    return false;
+  }
+  if (text == "") {
+    alert("Content must be filled out");
+    return false;
+  }
+}
+</script>
 <section class="vh-100">
     <div class="container-fluid py-4 h-100">
         <div class="row d-flex justify-content-center align-items-center h-10">
@@ -7,7 +20,7 @@
                 <div class="card shadow-2-strong" style="border-radius: 1rem;">
                     <div class="card-body p-5">
                         <h1 class="text-center">EDIT PUBLICATION</h1>
-                        <form action='' method='post'>
+                        <form name="editPublication" action='' onsubmit="return validateForm()" method='post' enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="titleinput">Title</label>
                                 <input name="title" type="text" class="form-control" id="titleinput" value="<?php echo $data->publication_title ?>"> </div>

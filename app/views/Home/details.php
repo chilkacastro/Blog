@@ -5,8 +5,10 @@
             <div class="card shadow-2-strong" style="border-radius: 1rem;">
                 <div class="card-body p-4">
                     <h1><?php echo 'Title: ' . $data["publication"]->publication_title ?> </h1>
-                    <h5><?php echo 'Author:' . $data["publication"]->first_name . ' ' . $data["publication"]->middle_name . ' ' . $data["publication"]->last_name ?></h5>
-                    <h5><?php echo 'Published Date:' . date(" m/d/Y H:i:s", strtotime($data["publication"]->timestamp)) . '<br><br>' ?></h5>
+                    <h5><?php echo 'Author:' . $data["publication"]->first_name . ' ' . $data["publication"]->middle_name . ' ' . $data["publication"]->last_name ?>
+                    </h5>
+                    <h5><?php echo 'Published Date:' . date(" m/d/Y H:i:s", strtotime($data["publication"]->timestamp)) . '<br><br>' ?>
+                    </h5>
                     <div class="card-body">
                         <p><?php echo $data["publication"]->publication_text ?> </p>
                     </div>
@@ -33,7 +35,15 @@
                 </div>
             </div>
         </div>
-
+        <script>
+        function validateForm() {
+            let comment = document.forms["commentForm"]["commentTextArea"].value;
+            if (comment == "") {
+                alert("Comment must be filled out");
+                return false;
+            }
+        }
+        </script>
         <!-- Add a comment when logged in -->
         <?php
         if (isLoggedIn()) {
@@ -44,7 +54,7 @@
                 </div>
             <div class="col-md-8 col-lg-6 col-xl-10 container">
                 <div class="card p-3 shadow-2-strong" style="border-radius: 1rem;"">
-                    <form action="" method="post" enctype=multipart/form-data">
+                    <form action="" name="commentForm" onsubmit="return validateForm()" method="post" enctype=multipart/form-data">
                         <div class="form-outline">
                             <textarea class="form-control" id="commentTextArea" name="commentTextArea" rows="4" placeholder="Write comment..." style="resize: none;"></textarea>
                         </div>
