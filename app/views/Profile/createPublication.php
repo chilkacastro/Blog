@@ -25,21 +25,20 @@
                                 <span class="invalid-feedback"><?php echo $data['empty_content']; ?> </span>
                             </div>
                             <label for="status" class="pr-2">Status:</label>
-                            <div class="form-check <?php echo (!empty($data['empty_content'])) ? 'is-invalid' : ''; ?>">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="public" name="status"
+                                    id="public" checked>
                                 <label class="form-check-label" for="flexRadioDefault1">
                                     Public
                                 </label>
                             </div>
-                            <div class="form-check <?php echo (!empty($data['empty_content'])) ? 'is-invalid' : ''; ?>">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault2" checked>
+                            <div class="form-check">
+                                <input class="form-check-input" value="private" type="radio" name="status"
+                                    id="private">
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     Private
                                 </label>
                             </div>
-                            <span class="invalid-feedback"><?php echo $data['empty_status']; ?> </span>
                             <div class="d-flex justify-content-center">
                                 <button type="submit" name="upload" class="btn-btn-primary">Upload</button>
                             </div>
