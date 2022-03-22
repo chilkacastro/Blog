@@ -41,8 +41,9 @@
                 if ($comment->profile_id == $data["currentUser"]->profile_id) {
                     echo '<a class="mr-5" href="/Blog/Profile/editComment/'.$comment->publication_comment_id.'"><button>Edit</button></a>';
                     echo '<a href="/Blog/Profile/deleteComment/'.$comment->publication_comment_id.'"><button>Delete</button></a> ' ;
-                }
+                } 
             }
+         
         };
     
         '</div>
@@ -50,4 +51,5 @@
     </div>';
         ?>
 </section>
+
 <?php require APPROOT . '/views/includes/footer.php'; ?>

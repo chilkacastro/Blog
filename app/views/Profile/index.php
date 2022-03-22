@@ -79,4 +79,5 @@ if (!empty($data['msg'])) {
     </div>';
 }
 ?>
+<div></div>;
 <?php require APPROOT . '/views/includes/footer.php'; ?>

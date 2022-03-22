@@ -110,4 +110,13 @@ class Home extends Controller
         ];
         $this->view('Home/details',  $data);
     }
+
+    
+    public function deleteComment($publication_comment_id)
+    {
+        if ($this->commentModel->deletePublicationComment($publication_comment_id)) {
+            echo 'Please wait we are deleting the comment for you!';
+            echo '<meta http-equiv="Refresh" content=".2; url=/Blog/Home">';
+        }
+    }
 }

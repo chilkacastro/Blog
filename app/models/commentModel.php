@@ -100,9 +100,11 @@ class commentModel
      */
     public function getCommentProfile()
     {
-        $authorID = $_SESSION['user_id'];
-        $this->db->query("SELECT * FROM profile WHERE author_id = :author_id");
-        $this->db->bind(':author_id', $authorID);
+        if (isset($_SESSION['user_id'])) {
+            $authorID = $_SESSION['user_id'];
+            $this->db->query("SELECT * FROM profile WHERE author_id = :author_id");
+            $this->db->bind(':author_id', $authorID);
+        }
         return $this->db->getSingle();
     }
 }

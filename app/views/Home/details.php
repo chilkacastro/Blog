@@ -35,13 +35,13 @@
             </div>
         </div>
         <script>
-        function validateForm() {
-            let comment = document.forms["commentForm"]["commentTextArea"].value;
-            if (comment == "") {
-                alert("Comment must be filled out");
-                return false;
+            function validateForm() {
+                let comment = document.forms["commentForm"]["commentTextArea"].value;
+                if (comment == "") {
+                    alert("Comment must be filled out");
+                    return false;
+                }
             }
-        }
         </script>
         <!-- Add a comment when logged in -->
         <?php
@@ -67,19 +67,20 @@
             '<hr>';
             foreach ($data["comments"] as $comment) {
                 echo "<hr>";
-                echo $comment->first_name . ' ' . $comment->middle_name . ' ' . $comment->last_name . ' ' . date(" m/d/Y H:i:s", strtotime($comment->timestamp));
-                echo "<br>$comment->publication_comment_text<br>";
+                echo $comment->first_name . ' ' . $comment->middle_name . ' ' .
+                    $comment->last_name . ' ' . date(" m/d/Y H:i:s", strtotime($comment->timestamp));
+                if ($comment->profile_id == ($data['currentUser'])->profile_id) {
+                    echo '<a href="/Blog/Home/editComment/' . $comment->publication_comment_id . '"><button class>Edit</button></a>';
+                    echo '<a href="/Blog/Home/deleteComment/' . $comment->publication_comment_id . '"><button>Delete</button></a>';
+                }
 
-                    if ($comment->profile_id == ($data["currentUser"])->profile_id) {
-                        echo '<a class=""mr-5" href="/Blog/Profile/editComment/' . $comment->publication_comment_id . '"><button>Edit</button></a>';
-                        echo '<a href="/Blog/Profile/deleteComment/' . $comment->publication_comment_id . '"><button>Delete</button></a> ';
-                    }
-            };
-
+                echo "<br>$comment->publication_comment_text";
+            }
             '</div>
         </div>
     </div>';
         }
         ?>
 </section>
+<div></div>;
 <?php require APPROOT . '/views/includes/footer.php'; ?>
