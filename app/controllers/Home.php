@@ -114,7 +114,6 @@ class Home extends Controller
     public function deleteComment($publication_comment_id, $publication_id)
     {
         if ($this->commentModel->deletePublicationComment($publication_comment_id)) {
-
             echo 'Please wait we are deleting the comment for you!';
             header("Location:/Blog/Home/details/$publication_id");
         }
