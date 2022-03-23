@@ -56,18 +56,11 @@ class Profile extends Controller
         if (!isset($_POST['upload'])) {
             $this->view('Profile/createPublication');
         } else {
-            // $filename= $this->imageUpload();
-            // $status = ['status' => trim($_POST['status'])];
-                // $status = '';
-                // if (!isset($_POST['status']))
-                //     $status = '';
-                // else
-                //     $status = trim($_POST['status']);
+            
 
                 $data = [
                         'title' => trim($_POST['title']),
                         'text' => trim($_POST['text']),
-                        // $status,
                         'status' => trim($_POST['status']),
                         'empty_title' => '',
                         'empty_text' => '',
@@ -77,25 +70,12 @@ class Profile extends Controller
                     if ($this->profileModel->createPublication($data)) {
                         header('Location: /Blog/Profile/index');
                         echo 'Please wait we are uploading the publication for you!';
-                        // $this->view('Profile/index', $data);
+                       
                     }
                 }  
             
-            // $data = [
-            //     'title' => trim($_POST['title']),
-            //     'text' => trim($_POST['text']),
-            //     // 'status' => $status->'status',
-            //     'status' => trim($_POST['status']),
-            //     'empty_title' => '',
-            //     'empty_text' => '',
-            //     'empty_status' => ''
-            // ];
-        // if ($this->validateData($data)) {
-        //     if ($this->profileModel->createPublication($data)) {
-        //         echo 'Please wait we are uploading the publication for you!';
-        //         header('Location: /Blog/Profile/index');
-        //     }
-        //     }            
+           
+       
         }
     }
 

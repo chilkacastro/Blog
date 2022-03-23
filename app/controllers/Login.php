@@ -66,13 +66,7 @@ class Login extends Controller
                         $this->view('Login/index', $data);
                     }
                 }
-                // // user does not exists
-                // else {
-                //     $data = [
-                //         'msg' => "User: " . $_POST['username'] . " does not exists",
-                //     ];
-                //     $this->view('Login/index', $data);
-                // }
+               
             }
         }
     }

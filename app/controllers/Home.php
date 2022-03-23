@@ -70,6 +70,7 @@ class Home extends Controller
                         $this->view('Home/index', $data);
                         break;
                     case "content":
+                        $keywords = $_POST['keywords'];
                         $publications = $this->publicationModel->getAllPublicationsByText($keywords);
                         $data = [
                             "publications" => $publications
